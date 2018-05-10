@@ -19,7 +19,7 @@ class Studios extends Controller {
    public function renderStudioPage() {
       $title = 'Студии и секции дома молодежи Василеостровского района';
 
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
          $adminlink = '<i class="adminpanel"><a href="admin/addstudio">Добавить новую студию</a></i>';
       } else {$adminlink = '';}
 
@@ -76,7 +76,7 @@ class Studios extends Controller {
    }
 
    public function renderCurrentStudioPage($shortname) {
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editstudio/'.$shortname.'">Редактировать студию</a></i>';
       } else {$adminlink = '';}
 

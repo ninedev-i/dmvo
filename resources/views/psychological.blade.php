@@ -19,7 +19,7 @@
    <h2>Наши специалисты</h2>
    <div class='photo_news' style='display: -webkit-flex; display: flex; justify-content: flex-start; -webkit-align-items: top; align-items: top;'>
    <!-- <a href='about/people/52' class='psy'><img src='{{URL::to('/')}}/public/img/users/an.yakkola.jpg' style='height: 110px; float: left; margin-right: 5px;'><b>Яккола Айна Николаевна</b><br />заведующая отделом<br />часы приёма:<br />вт, чт 11:00-13:00</p></a> -->
-   <a href='about/people/23' class='psy'><img src='{{URL::to('/')}}/public/img/users/du.kudriavcev.jpg' style='height: 110px; float: left; margin-right: 5px;'><p><b>Кудрявцев Денис Юрьевич</b><br />психолог<br />консультации:<br />пн, ср – 17:00-20:00</p></a>
+   <a href='about/people/23' class='psy'><img src='{{URL::to('/')}}/public/img/users/du.kudriavcev.jpg' style='height: 110px; float: left; margin-right: 5px;'><p><b>Кудрявцев Денис Юрьевич</b><br />психолог<br />консультации:<br />вт, чт – 17:00-20:00</p></a>
    <a href='about/people/30' class='psy'><img src='{{URL::to('/')}}/public/img/users/nf.novoselova.jpg' style='height: 110px; float: left; margin-right: 5px;'><p><b>Новосёлова Наталья Фёдоровна</b><br />психолог<br />консультации:<br />пн, ср – 17:00-20:00</p></a>
    <a href='about/people/79' class='psy'><img src='{{URL::to('/')}}/public/img/users/ae.smirnov.jpg' style='height: 110px; float: left; margin-right: 5px;'><p><b>Смирнов Анатолий Эдуардович</b><br />психолог<br />консультации:<br />пт – 16:00-19:00</p></a>
    </div>

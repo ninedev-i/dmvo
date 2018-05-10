@@ -25,7 +25,7 @@ class Online extends Controller {
          ->orderBy('date_to', 'desc')
          ->paginate(10);
 
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
       $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/12">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 

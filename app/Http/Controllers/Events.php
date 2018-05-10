@@ -33,7 +33,7 @@ class Events extends Controller {
          ->orderBy('date_from', 'desc')
          ->get();
 
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/addevent">Добавить новое мероприятие</a></i>';
       } else {$adminlink = '';}
 
@@ -58,7 +58,7 @@ class Events extends Controller {
          ->distinct()
          ->get();
 
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/addevent">Добавить новое мероприятие</a></i>';
       } else {$adminlink = '';}
 
@@ -81,7 +81,7 @@ class Events extends Controller {
 
       $searchValue = $eventTitle;
 
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
       $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/addevent">Добавить новое мероприятие</a></i>';
       } else {$adminlink = '';}
 
@@ -95,7 +95,7 @@ class Events extends Controller {
    // Отдельно взятое мероприятие
    public function renderCurrentEventPage($id) {
 
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editevent/'.$id.'">Редактировать мероприятие</a> <a href="'.URL::to('/').'/admin/addevent" style="margin-left: 10px;">Добавить мероприятие</a></i>';
       } else {$adminlink = '';}
 

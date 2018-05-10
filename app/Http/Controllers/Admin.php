@@ -25,7 +25,7 @@ class Admin extends Controller {
     }
 
     public function index() {
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
       $title = 'Админка';
 
       return View::make('admin/index')

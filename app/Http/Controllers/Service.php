@@ -19,7 +19,7 @@ class Service extends Controller {
          ->where('id', '7')
          ->first();
 
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/7">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -34,7 +34,7 @@ class Service extends Controller {
          ->where('id', '8')
          ->first();
 
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/8">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -49,7 +49,7 @@ class Service extends Controller {
          ->where('id', '9')
          ->first();
 
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/9">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -64,7 +64,7 @@ class Service extends Controller {
          ->where('id', '10')
          ->first();
 
-      if (Auth::check() && Auth::user()->id == 1) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/10">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
