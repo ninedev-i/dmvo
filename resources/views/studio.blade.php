@@ -16,7 +16,7 @@
    {!! Form::select('studioPrice', ['all' => 'Все', 'бесплатно' => 'Бесплатные занятия', 'платно' => 'Платные занятия'], null, ['style' => 'margin-right: 10px;']) !!}
 
    {!! Form::label('studioDirection', 'Направление:') !!}
-   {!! Form::select('studioDirection',  ['%' => 'Все', 'vocal' => 'Вокал', 'dance' => 'Танцы', 'fizra' => 'Спорт', 'theatre' => 'Театр', 'music' => 'Музыка', 'patriot' => 'Патриотика', 'poetry' => 'Слово', 'izo' => 'ИЗО', 'family' => 'Семья'], null, ['style' => 'margin-right: 10px;']) !!}
+   {!! Form::select('studioDirection',  ['%' => 'Все', 'vocal' => 'Вокал', 'dance' => 'Танцы', 'fizra' => 'Спорт', 'theatre' => 'Театр', 'music' => 'Музыка', 'patriot' => 'Патриотика', 'poetry' => 'Слово', 'izo' => 'ИЗО', 'family' => 'Семья', 'psy' => 'Психология'], null, ['style' => 'margin-right: 10px;']) !!}
 
    {!! Form::label('studioAge', 'Возраст:') !!}
    {!! Form::text('studioAge', null, ['style' => 'height: 25px; margin-right: 10px; width: 27px; padding: 5px 1%; text-align: center; display: inline-block;', 'required' => 'required']) !!}
@@ -86,6 +86,13 @@
     <h3>Работа с семьями:</h3>
     @foreach ($familystudios as $familystudio)
       <li class="studio"><a href="studio/{{ $familystudio->shortname }}">{{ $familystudio->studio_name }}<?php if ($familystudio->price != "бесплатно") {echo '<span class="typefree"><img src="public/img/typenotfree.png"></span>';} ?></a></li>
+    @endforeach
+  </div>
+  <div class="direction">
+    <div class="dirimage" style="background-image: url(public/img/psy.jpg); background-position: 50% 0%;"></div>
+    <h3>Психологическая поддержка молодежи:</h3>
+    @foreach ($psystudios as $psystudio)
+      <li class="studio"><a href="studio/{{ $psystudio->shortname }}">{{ $psystudio->studio_name }}<?php if ($psystudio->price != "бесплатно") {echo '<span class="typefree"><img src="public/img/typenotfree.png"></span>';} ?></a></li>
     @endforeach
   </div>
 </div>

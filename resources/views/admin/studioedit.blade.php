@@ -44,6 +44,7 @@
          <option value='izo' <?php if (in_array('izo', $alltags)) {echo "selected";} ?>>ИЗО</option>
          <option value='family' <?php if (in_array('family', $alltags)) {echo "selected";} ?>>Семья</option>
          <option value='patriot' <?php if (in_array('patriot', $alltags)) {echo "selected";} ?>>Патриотика</option>
+         <option value='psy' <?php if (in_array('psy', $alltags)) {echo "selected";} ?>>Психология</option>
       </select>
       <script>$('.chosen-select').chosen({ search_contains: true });</script>
    </td></tr>

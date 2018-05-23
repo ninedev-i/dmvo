@@ -41,6 +41,7 @@
             <option value='izo'>ИЗО</option>
             <option value='family'>Семья</option>
             <option value='patriot'>Патриотика</option>
+            <option value='psy'>Психология</option>
          </select>
          <script>$('.chosen-select').chosen({ search_contains: true });</script>
       </td></tr>

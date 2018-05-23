@@ -60,6 +60,10 @@ class Studios extends Controller {
          ->where('direction', 'LIKE', '%family%')
          ->orderBy('studio_name', 'asc')
          ->get();
+      $psystudios = Studio::where('show_or_not', '=', '0')
+         ->where('direction', 'LIKE', '%psy%')
+         ->orderBy('studio_name', 'asc')
+         ->get();
 
       return View::make('studio')
          ->with('title', $title)
@@ -72,7 +76,8 @@ class Studios extends Controller {
          ->with('dancestudios', $dancestudios)
          ->with('musicstudios', $musicstudios)
          ->with('familystudios', $familystudios)
-         ->with('patriotstudios', $patriotstudios);
+         ->with('patriotstudios', $patriotstudios)
+         ->with('psystudios', $psystudios);
    }
 
    public function renderCurrentStudioPage($shortname) {

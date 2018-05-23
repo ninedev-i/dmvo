@@ -10,7 +10,7 @@
    {!! Form::select('studioPrice',['all' => 'Все', 'бесплатно' => 'Бесплатные занятия', 'платно' => 'Платные занятия'], $studioPrice, ['style' => 'margin-right: 10px;']) !!}
 
    {!! Form::label('studioDirection', 'Направление:') !!}
-   {!! Form::select('studioDirection',  ['%' => 'Все', 'vocal' => 'Вокал', 'dance' => 'Танцы', 'fizra' => 'Спорт', 'theatre' => 'Театр', 'music' => 'Музыка', 'patriot' => 'Патриотика', 'poetry' => 'Слово', 'izo' => 'ИЗО', 'family' => 'Семья'], $studioDirection, ['style' => 'margin-right: 10px;']) !!}
+   {!! Form::select('studioDirection',  ['%' => 'Все', 'vocal' => 'Вокал', 'dance' => 'Танцы', 'fizra' => 'Спорт', 'theatre' => 'Театр', 'music' => 'Музыка', 'patriot' => 'Патриотика', 'poetry' => 'Слово', 'izo' => 'ИЗО', 'family' => 'Семья', 'psy' => 'Психология'], $studioDirection, ['style' => 'margin-right: 10px;']) !!}
 
    {!! Form::label('studioAge', 'Возраст:') !!}
    {!! Form::text('studioAge', $studioAge, ['style' => 'height: 25px; margin-right: 10px; width: 27px; padding: 5px 1%; text-align: center; display: inline-block;', 'required' => 'required']) !!}
