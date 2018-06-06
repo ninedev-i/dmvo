@@ -6,7 +6,6 @@
    <script>$(document).ready(function() {$('.menu-button').click(function() {$('nav').slideToggle();}); });</script>
    <link rel="stylesheet" href="{{URL::to('/')}}/public/js/chosen/chosen.css">
    <script src="{{URL::to('/')}}/public/js/chosen/chosen.jquery.js"></script>
-   <script src="{{URL::to('/')}}/public/js/wyseditor.js"></script>
    <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
@@ -73,6 +72,10 @@
 
 <script>$('button').click(function(e) { e.preventDefault(); var whatToDel = $(this).val().substr(18); $.ajax({type: "GET", url: "../../admin/deleteStudioPhoto/"+whatToDel}); $(this).parent().fadeOut(); });</script>
 
-
+<script src="{{URL::to('/')}}/public/js/wyseditor.js"></script>
+<script>
+   new ContentEditor(1, true);
+   new ContentEditor(2, true);
+</script>
 
 @endsection

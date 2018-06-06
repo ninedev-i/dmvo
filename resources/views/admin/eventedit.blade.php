@@ -57,5 +57,8 @@
 
 <script>$('button').click(function(e) { e.preventDefault(); var whatToDel = $(this).val().substr(13); $.ajax({type: "GET", url: "../../admin/deletephoto/"+whatToDel}); $(this).parent().fadeOut(); });</script>
 <script src="{{URL::to('/')}}/public/js/wyseditor.js"></script>
-
+<script>
+   new ContentEditor(1, true);
+   new ContentEditor(2, true);
+</script>
 @endsection

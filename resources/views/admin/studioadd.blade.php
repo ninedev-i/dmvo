@@ -6,7 +6,6 @@
    <script>$(document).ready(function() {$('.menu-button').click(function() {$('nav').slideToggle();}); });</script>
    <link rel="stylesheet" href="{{URL::to('/')}}/public/js/chosen/chosen.css">
    <script src="{{URL::to('/')}}/public/js/chosen/chosen.jquery.js"></script>
-   <script src="{{URL::to('/')}}/public/js/wyseditor.js"></script>
 @endsection
 
 @section('content')
@@ -52,5 +51,10 @@
    </table>
    {!! Form::submit('Добавить студию') !!}
    {!! Form::close() !!}
-
+   
+   <script src="{{URL::to('/')}}/public/js/wyseditor.js"></script>
+   <script>
+      new ContentEditor(1, true);
+      new ContentEditor(2, true);
+   </script>
 @endsection

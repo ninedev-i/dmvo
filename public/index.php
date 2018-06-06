@@ -1,6 +1,6 @@
 <?php
-// header('Content-type: text/html');
-// header('Access-Control-Allow-Origin: *');
+header('Content-type: text/html');
+header('Access-Control-Allow-Origin: *');
 
 /**
  * Laravel - A PHP Framework For Web Artisans

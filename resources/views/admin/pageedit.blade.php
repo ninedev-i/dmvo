@@ -25,4 +25,7 @@
   {!! Form::close() !!}
 
   <script src="{{URL::to('/')}}/public/js/wyseditor.js"></script>
+  <script>
+     new ContentEditor(1, false);
+  </script>
 @endsection
