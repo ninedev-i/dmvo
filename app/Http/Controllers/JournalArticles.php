@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Article;
+use App\JournalArticle;
 use Request;
 use URL;
 use DB;
 
-class Articles extends Controller {
+class JournalArticles extends Controller {
 
    public function getArticle($id) {
-      $article = Article::where('id', $id)
+      $article = JournalArticle::where('id', $id)
          ->first();
 
       return response()->json($article);

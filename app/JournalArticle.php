@@ -3,10 +3,11 @@
 namespace App;
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model {
-   protected $table = 'articles';
+class JournalArticle extends Model {
+   protected $table = 'journal_articles';
    protected $fillable = [
       'title',
       'content',
+      'category'
    ];
 }

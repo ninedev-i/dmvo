@@ -84,4 +84,4 @@ Route::post('/admin/editmassmedia/{id}', 'Admin@postEditMassMedia')->name('admin
 Route::get('/downloadExcel/{type}', 'Profile@downloadExcel');
 Route::get('/downloadExcel/xls/{id}', 'Profile@downloadExcelId');
 
-Route::get('/articles/{id}', 'Articles@getArticle');
+Route::get('/journalpages/{name}', 'JournalPages@getPage');
