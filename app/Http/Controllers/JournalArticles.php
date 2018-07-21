@@ -15,4 +15,12 @@ class JournalArticles extends Controller {
       return response()->json($article);
    }
 
+   public function getList($category) {
+      $articles = JournalArticle::where('category', $category)
+         ->orderBy('date', 'asc')
+         ->get();
+
+      return response()->json($articles);
+   }
+
 }
