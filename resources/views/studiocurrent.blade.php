@@ -48,7 +48,7 @@
     @endif
 
     @if(sizeof($participationInEvents) > 0)
-      <h3 style='margin-bottom: 5px;'>Участие в мероприятиях:</h3>
+      <h3 style='margin: 15px 0px 5px; '>Участие в мероприятиях:</h3>
       @foreach ($participationInEvents as $events)
       <article>
         <a href="{{URL::to('/')}}/events/{{ $events->id }}">

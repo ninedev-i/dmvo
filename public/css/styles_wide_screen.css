@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css?family=Ledger');
+* {margin: 0px; padding: 0px;}
+body {min-width: 800px; background-color: #dddede; color: #7b8b8e; font: 16px Helvetica, Arial, sans-serif; line-height: 24px;}
+a {color: #384047;}
+h1 {font-size: 28px; margin-bottom: 10px; font-weight: 600;}
+h2, h2 a {font-size: 24px; margin-bottom: 10px; font-weight: 600; background-color: transparent; text-decoration: none;}
+h1, h2, h3, h4, h5 {color: #384047; margin-bottom: 15px;}
+h2.mainpagetitle {margin-top: 10px;}
+h4 {margin-top: 10px !important;}
+button, input[type='submit'] {color: white; padding: 9px; margin: 10px 10px 10px 0px; font-size: 16px; background-color: #006699; border: 0px; cursor: pointer; font-weight: normal;}
+button, input[type='submit']:hover {background-color: #005a84;}
+input[type='text'], input[type='date'], input[type='time'], input[type='number'], input[type='email'] , input[type='password'], textarea {display: block; height: 12px; color: #7b8b8e; border: 1px solid #006699; margin-bottom: 10px; padding: 1% 9px; font: 16px Helvetica, Arial, sans-serif;}
+p {margin-bottom: 9px;}
+br {line-height: 29px;}
+ol {margin-left: 20px;}
+hr {margin-bottom: 10px;}
+blockquote {border-left: #999 3px solid; font-style: italic; margin: 10px 10px; color: #999; padding: 15px;}
+a img {border: none;}
+.button {display: inline-block; text-align: center; margin-bottom: 5px; color: white; font-weight: bold; margin-right: 10px; padding: 20px; background-color: #006699; margin-bottom: 20px; cursor: pointer;}
+a.smallbutton {text-decoration: none;}
+.smallbutton {display: inline-block; text-align: center; color: white; margin-right: 10px; margin-bottom: 10px; padding: 10px; background-color: #006699; cursor: pointer;}
+.smallbutton.current {background-color: #0E3D59; text-decoration: underline; }
+.smallbutton:hover, .button:hover {background-color: #005a84;}
+.clear {clear: both;}
+
+/* Меню */
+header {display: table;  position: relative; width: 94%; padding: 0px 3% 0px 3%;}
+.logo {width: 10%; vertical-align: middle; display: table-cell; padding-top: 10px;}
+.menu-button {display: none;}
+header nav {width: 80%; display: table-cell; text-align: right; padding-top: 12px;}
+header nav a li {color: white; background-color: #006699; /*background-color: #dde5ea; color: #6894ab;*/ display: inline-block; text-align: center; margin-left: 1%; margin-top: 6px; padding: 1% 2%; cursor: pointer; text-decoration: none;}
+@media (max-width: 800px) {header nav a li {padding: 1%;}}
+header nav a li:hover {background-color: #005a84;}
+header nav a li.current {background-color: #0E3D59; text-decoration: underline; }
+header nav a li .optimalsize {display: none;}
+header nav a li .capitalize {text-transform: capitalize;}
+
+/* Версия для слабовидящих */
+.changesize {text-align: center; margin: 10px auto; display: inline-block;}
+#changewordsize,#changewordsize1 {padding: 10px; background-color: #DC3522;}
+#changewordsize:hover,#changewordsize1:hover {background-color: #AB291A;}
+#changewordsize1 {display: none}
+
+/* Подменю */
+.submenu {margin-bottom: 10px;}
+.submenu .smallbutton {background-color: #DDE5EA; color: #384047;}
+.submenu .smallbutton:hover {background-color: #B4DCED; color: #4493fe;}
+.submenu .current, .submenu .current:hover  {background-color: #006699; color: white;}
+
+/* Страница */
+.page {width: 90%; min-height: 500px; background-color: white; margin: 5px auto; padding: 2% 2% 15px; color: #384047;}
+.page ul li {margin-left: 40px;}
+footer {width: 94%; text-align: center; margin: 0px auto;}
+footer address {font-style: normal; display: inline-block;}
+footer address a {background-color: transparent;}
+
+/* Новости */
+article {width: 99%; min-height: 90px; padding-top: 10px; border-bottom: 1px solid #E5E7E8; cursor: pointer;}
+article:hover {background-color: #B4DCED;}
+article a {text-decoration: none; color: #384047;}
+articlek p b {color: #6e7374;}
+.articleimg {width: 70px; height: 70px; background-size: cover; border-radius: 100px; float: left; margin-top: 5px; margin-bottom: 5px; margin-right: 20px; border: 0px;}
+.noarticleimg {width: 70px; height: 70px; background-size: cover; float: left; margin-top: 5px; margin-bottom: 5px; margin-right: 20px; border: 0px;}
+#load div{margin: 5px auto; cursor: pointer; background-color: #E5E7E8; text-align: center; padding: 6px;}
+#load div:hover {background-color: #006598; color: white;}
+.photo_news {margin-top: 10px;}
+.photo_of_event {height: 140px;}
+p.news-title {font-weight: bold;}
+.pagination {margin-top: 15px;}
+.pagination li {list-style: none; display: inline; margin-left: 0px !important; margin-right: 10px;}
+.pagination li a, .pagination li span {list-style: none; display: inline; background-color: #006699; color: white; padding: 10px !important;}
+.pagination li a:hover {background-color: #005a84;; color: white;}
+.pagination li.disabled span {background-color: #DDE5EA; color: black;}
+.pagination li.active span {font-weight: bold; background-color: #DDE5EA; color: black;}
+
+/* Педагоги */
+.faces {width: 32%; height: 170px; max-height: 170px; margin-bottom: 1%; border: 1px solid #CBE2ED; cursor: pointer; overflow: hidden;}
+.faces:nth-of-type(even) {float: right;}
+.faces:nth-of-type(1n) {float: left;margin-right: 1%;}
+.faces h3 {margin-left: 2%; padding-top: 2%;padding-top: 0px; margin-top: 5px; margin-bottom: 5px;}
+.faces .teachersstudio {margin-right: 150px; margin-left: 2%; padding-top: 1%; font-style: italic; color: black;}
+.faces .teachersstudio li {list-style: none;}
+.faces .teachersphoto {float: right; display: inline-block; background-size: cover; width: 150px; height: 170px; margin-top: 0px;}
+.faces:hover {background-color: #CBE2ED; color: white;}
+.pic-right {width: 400px; float: right; padding-left: 10px;} /* о дмво картинка*/
+
+/* Мероприятия */
+table.events {width: 100%; border-collapse: collapse; margin-top: 10px; margin-bottom: 10px;}
+table.events tbody tr {cursor: pointer; border-bottom: 1px solid #edeff0;}
+table.events tbody tr:nth-last-of-type(1) {border-bottom: 0px;;}
+table.events tbody tr:hover {background-color: #CBE2ED; color: #384047;}
+table.events tbody th {background-color: #006699; color: white; padding: 10px 15px; text-align: left;}
+table.events tbody th a{background-color: transparent; color: white; display: block; padding: 0px;}
+table.events tbody td {padding: 10px 15px; text-align: left;}
+table.events tbody td.rel1 {width: 200px;}
+form.searchform input[type=date] {padding: 5px; font-size: 18px; margin-right: 10px; background-color: white;}
+li.studios_news {display: inline-block;}
+.event_block {display: inline-block; margin-right: 20px; height: 300px; margin-bottom: 10px; overflow: hidden; width: 180px; border: 1px solid #ededed;}
+.event_block:hover {background-color: #fafafa;}
+.event_block a {display: table; text-decoration: none; width: 100%;}
+.event_block a img {height: 250px; width: 100%; object-fit: cover;}
+.event_block .event_title {display: table-cell; vertical-align: middle; padding: 10px; font-family: 'Ledger', serif; }
+.event_block .date_row {display: table-row; height: 50px;}
+.event_block .date_row .date_info {display: table-cell; padding: 5px 15px; vertical-align: middle; text-align: center;}
+#search {width: 98%;}
+.eventwithbg {display: table-row; vertical-align: middle; width: 100%; height: 250px; background-size: cover; font-weight: bold; text-align: center;}
+.bgcolor1 {background-color: #37c5c4;}
+.bgcolor2 {background-color: #ABC8E2;}
+.bgcolor3 {background-color: #C4D7ED;}
+.bgcolor4 {background-color: #E1E6FA;}
+.bgcolor5 {background-color: #7FB2F0;}
+.bgcolor6 {background-color: #96CEB4;}
+.bgcolor7 {background-color: #00A388;}
+.bgcolor8 {background-color: #79BD8F;}
+.bgcolor9 {background-color: #BEEB9F;}
+.bgcolor0 {background-color: #FFFF9D;}
+
+.year {padding: 15px 0px 0px 0px; text-align: center; display: block;}
+.old_events li {margin-left: 0px !important; list-style: none; border-bottom: 1px solid #EDEFF0;}
+.old_events li:hover {background-color: #B4DCED; color: #384047; cursor: pointer;}
+.old_events li a {text-decoration: none; display: block; padding: 10px 15px 10px 0px;}
+.old_events li div {width: 275px; display: inline-block; float: left;}
+
+/* Студии */
+li.studio {display: inline-block; background-color: #E5E7E8; color: black; margin: 5px 10px 5px 0px;}
+li.studio:hover {background-color: #006699; color: white;}
+li.studio .typefree {position: relative; display: inline-block; margin-left: 10px; top: 4px;}
+li.studio a {display: block; padding: 5px 10px 5px 10px; height: 100%;text-decoration: none;}
+li.studio a:hover{color: white;}
+.direction {float: left; margin: 10px 1%; width: 47%; border: 1px solid #E5E7E8;}
+.direction li.studio {margin-left: 10px; margin-bottom: 10px; display: block;}
+.dirimage {margin-bottom: 15px; height: 150px; width: 100%; display: block; background-size: cover; background-position: center center; background-repeat: no-repeat;}
+.direction h3, h3.direction {background-color: rgba(0, 102, 153, 0.8); margin-top: -48px; margin-bottom: 10px; color: white; padding: 5px; text-align: center;}
+.direction p {padding: 0px 15px;}
+.direction a {text-decoration: none;}
+.aboutPage .direction:hover {background-color: #fafafa;}
+.buttonsearch {background-color: #E5E7E8; color: white; border: 0px; padding: 5px 15px; margin-top: 0px; cursor: pointer; font-weight: bold;}
+.buttonsearch:hover {text-decoration: underline;}
+#formline {width: 60px; margin-left: 34px;}
+form.searchform input[type=radio]:checked + label {display: inline-block; background-color: #006699; color: white; cursor: pointer;}
+form.searchform input[type=radio] + label {background-color: #E5E7E8; color: black;  padding: 5px 10px 5px 10px; cursor: pointer;}
+form.searchform .searchblock {display: inline-block; margin-bottom: 10px; margin-right: 10px;}
+@media (max-width: 600px) {form.searchform input[type=radio] + label {margin-bottom: 10px;} }
+form.searchform input[type=radio] {display:none;}
+form.searchform input[type=radio] + label:hover {background-color: #006699; color: white;}
+form.searchform select {height: 37px; color: #7b8b8e; border: 1px solid #006699; padding: 5px; font: 16px Helvetica, Arial, sans-serif; background-color: white;}
+.age {display: inline-block;}
+.spisok:hover, .spisok:hover a {color: red; cursor: pointer; text-decoration: underline;}
+.photostudio {margin: 6px auto;}
+.photo1, .photo2, .photo3, .photo4, .photo5, .photo6 {
+	 /*-webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    filter: blur(2px);
+		-ms-filter: blur(2px);
+		filter: url('img/blur.svg#blur');
+		filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=5);
+		overflow: hidden;	display: inline-block; position: relative; width: 15.6%; height: 120px; margin-right: 1%; background-size: cover; background-position: center center;*/}
+img.noblur {height: 120px; max-width: 189px;}
+.noblurcontainer {position: relative; display: inline-block; text-align: center; margin-right: 1%; margin-left: -16.6%; z-index: 100; width: 15.6%; height: 120px;}
+.photo7, .photo8, .photo9, .photo10 {display: none;}
+.bytheway {width: 200px; color: black; background: #B4DCED; float: right; margin-left: 10px; margin-bottom: 5px; padding: 10px; font-size: 0.85em;}
+.bytheway  br {line-height: 2px;}
+.bytheway  a {font-size: 14px;}
+li.ournews a {padding: 5px; background-color: #B4DCED;}
+li.ournews {list-style: none; margin-bottom: 6px;}
+.photowithoutfuckingblur {overflow: hidden;	display: inline-block; position: relative; width: 15.6%; height: 170px; margin-right: 1%; background-size: cover; background-position: center center;}
+
+/* Услуги */
+table.servicetable {width: 98%; border-collapse: collapse; border-spacing: 5px 6px; position: relative; font-size: 1em;}
+table.servicetable tbody tr:first-child{background-color: #006699; color: white;}
+table.servicetable tbody tr td{text-align: left; padding-left: 7px;}
+table.servicetable td {border: 1px solid #006699; padding: 4px;}
+.page iframe.youtube-player {width: 620px; height: 360px;}
+/* Символы рубля (заменяют 'руб.') */
+@font-face {font-family: "Rubl Sign"; src: url(http://www.artlebedev.ru/;-)/ruble.eot);}
+span.rur {font-family: "Rubl Sign"; text-transform: uppercase; // text-transform: none;}
+span.rur span {position: absolute; overflow: hidden; width: .45em; height: 1em; margin: .1ex 0 0 -.55em; // display: none;}
+span.rur span:before {content: '\2013';}
+
+.service {float: left; width: 32%; text-decoration: none; margin-right: 1%;}
+.last {margin-right: 0% !important;}
+.service h3 {background-color: rgba(0, 102, 153, 0.8); margin-top: -48px; margin-bottom: 10px; color: white; padding: 5px; text-align: center;}
+
+/* Онлайн приемная */
+form.online {display: block;}
+form.online input[type=text],form.online input[type=email],form.online textarea,form.online select  {margin-bottom: 15px; display: block;}
+form.online textarea  {width: 700px; height: 110px;}
+form.online select {display: block; color: #7b8b8e; border: 1px solid #006699; margin-bottom: 10px; padding: 5px 1%; font: 16px Helvetica, Arial, sans-serif;}
+
+/* Психологическая служба */
+.photowithoutfuckingblur {overflow: hidden;	display: inline-block; position: relative; width: 100%; height: 190px; margin-right: 1%; background-size: cover; background-position: center center;}
+.psy {width: 32%;}
+a.psy {text-decoration: none;}
+
+/* Контактная информация */
+ul.contact {margin-bottom: 10px; padding: 0px;}
+ul.contact img {height: 100px; float: left; padding-right: 10px;}
+ul.contact li {list-style-type: none;}
+
+/* Админка */
+.adminpanel {display: block; padding-bottom: 5px; border-bottom: 1px solid #EDEFF0; margin-bottom: 20px; color: #7b8b8e;}
+.adminpanel a {text-decoration: none; border-bottom: 1px dotted #7b8b8e; color: #7b8b8e;}
+.adminpanel a:hover {border-bottom: 1px dotted #006699; color: #006699;}
+table.admintable {width: 100%;}
+table.admintable tr td:first-child{text-align: right; padding-right: 10px; width: 200px;}
+table.admintable tr td:nth-child(2n){text-align: right; padding-right: 10px; text-align: left;}
+table.admintable textarea {width: 98%; padding: 1%;}
+table.admintable input[type='text'] {width: 98%; padding: 1% 9px;}
+table.admintable input[type='date'] {font-size: 16px; width: 150px; padding: 1%; margin-bottom: 10px; display: inline-block;}
+table.admintable input[type='time'] {font-size: 16px; padding: 1%; margin-bottom: 10px; display: inline-block;}
+table.admintable input[type='file'] {font-size: 16px; padding: 1%; margin-bottom: 10px;}
+table.admintable select {font-size: 16px; padding: 1%; margin-bottom: 10px; border-color: #006699;}
+.hidden {display: none;}
+.deletephoto {background-size: cover; position: relative; display: inline-block; margin-right: 1%; width: 10%; height: 100px;}
+.delete {color: white; background-color: #006699; cursor: pointer; font-size: 10px; padding: 6px; position: absolute; margin: 0px; right: 0px;}
+.hiddenarea1, .hiddenarea2 {display: none; height: 150px; margin-bottom: 10px;}
+.mycontent1, .mycontent2 {color: #7b8b8e; border: 1px solid #006699; margin-bottom: 10px; font: 16px Helvetica, Arial, sans-serif; padding: 1%; width: 98%;}
+input[type='radio'] {margin-right: 3px; margin-left: 7px;}
+label.adminstudio {margin-right: 6px; padding: 4px;}
+input[type='checkbox']:checked + label {background-color: #B4DCED;}
+
+/* Профиль */
+.profileTimetable {width: 100%; border-collapse: collapse;}
+.profileTimetable th {text-align: left; background-color: #EDEFF0; padding: 5px 10px;}
+.profileTimetable tr {border-bottom: 1px solid #EDEFF0; cursor: pointer;}
+.profileTimetable tr:nth-child(odd) {background-color: #f7f7f7;}
+.profileTimetable tr:hover {color: white; background-color: #006699;}
+.profileTimetable tr:hover th {color: black; cursor: default;}
+.profileTimetable td {padding: 5px 10px;}
+
+/* Слайдер */
+.slider {width: 90%; height: 300px; overflow: hidden; font-size: 0; display: inline-block;}
+.slider ul {padding-left: 0px; width: 700px; height: 300px; margin: 0;}
+.slider ul li {display: inline-block; margin: 10px 0 20px 20px;}
+.slider ul li img {height: 283px; padding-bottom: 5px;}
+#demo5.slider ul {width: 100%; min-width: 1024px;}
+@media (max-width: 1024px) {#demo5.slider ul {width: 1024px;}}
+@media (max-width: 1366px) {#demo5.slider ul {width: 1366px;}}
+@media (max-width: 1600px) {#demo5.slider ul {width: 1600px;}}
+@media (max-width: 1920px) {#demo5.slider ul {width: 1920px;}}
+.sliderbutton {display: inline-block; width: 36px; height: 300px; border: 0px; cursor: pointer; background: transparent;}
+
+.btn:hover, .btn:focus {background-color: #f1eeee; outline: none;}
+button.back {background-image: url('../img/arrow_left.png'); margin: 0px; float: left;}
+button.next {background-image: url('../img/arrow_right.png'); margin: 0px; float: right;}
+
+@media (max-width: 800px)
+{
+	body {font-size: 1em; min-width: 350px;}
+	h1 {font-size: 1.3em;}
+	h2 {font-size: 1.2em;}
+	h3 {font-size: 1.1em;}
+	header {display: block;  position: relative; padding: 0px; width: 96%; padding-left: 2%; padding-right: 2%; font-weight: 600;}
+	.menu-button {width: 75px; height: 15px; padding: 10px 0px 0px 30px; margin: 10px auto; display: block; color: #006699; font-size: 1.2em; cursor: pointer; text-transform: uppercase; margin-bottom: 10px; background-image: url('../img/menu-button.png'); background-repeat: no-repeat; background-position: center left; line-height: 8px;}
+	header nav {display: none; width: 100%; margin: 0px; padding: 0px;}
+	header nav a {text-decoration: none;}
+	header nav a li {display: block; text-align: center; margin: 0px 0px 5px 0px; padding: 10px 0px; cursor: pointer;}
+	.logo {width: 90%; max-width: 417px; display: block; margin: 10px auto; border: 0px;}
+	.logo a img {width: 100%;}
+	.logo a svg {width: 100%;}
+	.page {width: 92%; min-height: 500px; background-color: white; margin: 20px auto; padding: 1% 2% 15px; color: #384047;}
+	.page ul li {margin-left: 5px;}
+
+	.bytheway {width: 94%;}
+	article a p {display: none;}
+	article a p.news-title {display: block;}
+	form.online textarea {width: 100%;}
+
+	.page iframe.youtube-player {width: 100%; height: 300px;}
+
+	.pic-right {width: 100%; max-width: 400px; float: right; padding-left: 10px;}
+	.faces {width: 48%; display: block; max-height: none; height: 165px; margin-bottom: 10px; text-align: center;}
+	.faces .teachersphoto {float: none; display: block; background-size: cover; width: 150px; height: 110px; margin: 0px auto;}
+	.faces .teachersstudio {display: none;}
+	.faces h3 {display: block; font-size: 1em; margin-bottom: 10px; position: relative; padding: 0px;}
+
+	.direction {float: none; margin: 10px 1%; width: 94%; border: 1px solid #E5E7E8;}
+	.searchblock {margin-left: 0px;}
+	.age {margin-left: 0px; display: block;}
+	.photo1, .photo2, .photo3, .photo4, .photo5, .photo6  {width: 48%;}
+	.noblurcontainer  {width: 48%; margin-left: -48%;}
+	/*img.noblur {max-width: 189px;}*/
+	li.ournews a {padding: 5px; background-color: transparent;}
+	li.ournews {list-style: circle; margin-bottom: 6px;}
+
+	button.back, button.next {display: none;}
+	/*.slider ul li {width: 94%;}*/
+
+	.event_block {width: 100%; height: auto;}
+
+	.old_events, .old_events li, .old_events li a {padding-left: 0px; margin: 0px !important;}
+	.old_events li div {display: block; float: none;}
+
+   .pagination li {display: none;}
+   .pagination li:first-child, .pagination li:last-child {display: inline-block;}
+}
+@media (min-width: 1500px)
+{
+	header nav a li .optimalsize {display: inline-block;}
+	header nav a li .capitalize {text-transform: lowercase;}
+}

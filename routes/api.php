@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+Route::get('/user', function (Request $request) { return $request->user(); })->middleware('auth:api');
+
+Route::post('/service/transeforce','Service@OrderTf')->name('service');
+Route::post('/psychological', 'Psychological@OrderPsy')->name('psychological');
+Route::post('/volunteer','Online@MailToOnline')->name('volunteer');
+Route::get('/admin/deletephoto/{id}/{name}', 'Admin@deletePhoto')->name('admin');
+Route::get('/admin/deleteStudioPhoto/{shortname}/{name}', 'Admin@deleteStudioPhoto')->name('admin');

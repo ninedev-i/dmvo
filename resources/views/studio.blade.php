@@ -54,7 +54,7 @@
     @endforeach
   </div>
   <div class="direction">
-    <div class="dirimage" style="background-image: url(public/img/studio/mainstream/px7n349qrgQ.jpg); background-position: 50% 40%;"></div>
+    <div class="dirimage" style="background-image: url(public/img/dance_studios.jpg); background-position: 50% 40%;"></div>
     <h3>Танцевальное направление:</h3>
     @foreach ($dancestudios as $dancestudio)
       <li class="studio"><a href="studio/{{ $dancestudio->shortname }}">{{ $dancestudio->studio_name }}<?php if ($dancestudio->price != "бесплатно") {echo '<span class="typefree"><img src="public/img/typenotfree.png"></span>';} ?></a></li>

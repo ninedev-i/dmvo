@@ -92,6 +92,7 @@ class Studios extends Controller {
 
       $participationInEvents = Event::where('tags', 'LIKE', '%'.$shortname.'%')
          ->orderBy('date_to', 'desc')
+         ->where('show_or_not', '=', '0')
          ->paginate(5);
 
       $files = Storage::disk('images');
