@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\View;
 use App\Http\Requests;
+use App\Attachment;
 use App\People;
 use App\Studio;
 use App\Event;
@@ -242,11 +243,14 @@ class Admin extends Controller {
          ->orderBy('studio_name', 'asc')
          ->get();
       $photos = Storage::disk('images')->allFiles('/events/id'.$id);
+      $attachments = Attachment::where('event_id', '=', $id)
+         ->get();
 
       return View::make('admin/eventedit')
          ->with('studiolist', $studiolist)
          ->with('content', $content)
          ->with('photos', $photos)
+         ->with('attachments', $attachments)
          ->with('title', $title);
    }
 
@@ -262,7 +266,7 @@ class Admin extends Controller {
                       'title' => $input['title'],
                       'content' => $input['content'],
                       'post_reliz' => $input['post_reliz'],
-                      'show_or_not' => $input['show_or_not'],
+                      'show_or_not' => 0,
                       'right_column' => $input['right_column'],
                       'what_time' => $input['what_time'],
                       'date_from' => $input['date_from'],
@@ -285,13 +289,16 @@ class Admin extends Controller {
          }
       }
 
-      if ($input['show_or_not'] == 1) {
-         return redirect('http://доммолодежи.рф/events');
-      } else {
-         return redirect()->route('events', ['id' => $id]);
-      }
+      return redirect()->route('events', ['id' => $id]);
     }
 
+    public function deleteCurrentEvent($id) {
+      DB::table('events')
+         ->where('id', $id)
+         ->update(['show_or_not' => 1]);
+
+      return redirect('http://доммолодежи.рф/events');
+    }
 
      // Редактировать страницы – список
      public function editPage() {

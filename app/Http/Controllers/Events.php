@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\View;
 use App\Http\Requests;
+use App\Attachment;
 use App\Page;
 use Request;
 use App\Event;
@@ -126,16 +127,15 @@ class Events extends Controller {
 
       $files = Storage::disk('images');
       $photos = $files->allFiles('/events/id'.$id);
+      $attachments = Attachment::where('event_id', '=', $id)
+         ->get();
 
-      if(sizeof($event)!=0) {
       return View::make('event')
          ->with('adminlink', $adminlink)
+         ->with('attachments', $attachments)
          ->with('photos', $photos)
          ->with('tags', $tags)
          ->with('event', $event);
-      } else {
-         return 'qwe';
-      }
    }
 
 }
