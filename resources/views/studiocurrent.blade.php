@@ -25,7 +25,7 @@
     @if ( $studio->phone )
       {!! $studio->phone !!}<br />
     @endif
-    @if ( $studio->link )
+    @if ( $studio->link && !$isWideScreen )
       <a href="{{ $studio->link }}" target="_blank" style="text-decoration: underline;">{{ $studio->link }}</a>
     @endif
 </div>

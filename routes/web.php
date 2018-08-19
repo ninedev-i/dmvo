@@ -1,7 +1,4 @@
 <?php
-
-// Route::group(['domain' => 'dmvo'], function () {
-Route::group(['domain' => 'xn--d1aadekogaqcb.xn--p1ai'], function () {
    Route::get('/', 'Index@renderIndexPage')->name('index');
    Route::get('/test', 'Index@renderIndexPage2')->name('index2');
 
@@ -33,14 +30,17 @@ Route::group(['domain' => 'xn--d1aadekogaqcb.xn--p1ai'], function () {
    Route::get('/service/columnhall', 'Service@renderColumnhallPage')->name('service');
    Route::get('/service/bluehall', 'Service@renderBluehallPage')->name('service');
    Route::get('/service/transeforce', 'Service@renderTransforcePage')->name('service');
+   Route::post('/service/transeforce','Service@OrderTf')->name('service');
 
    Route::get('/psychological', 'Psychological@renderPsychologicalPage')->name('psychological');
       Route::get('/psychological/consult', 'Psychological@renderConsultPage')->name('psychological');
       Route::get('/psychological/group', 'Psychological@renderGroupPage')->name('psychological');
       Route::get('/psychological/proforientation', 'Psychological@renderProforientationPage')->name('psychological');
       Route::get('/psychological/training', 'Psychological@renderTrainingPage')->name('psychological');
+      Route::post('/psychological', 'Psychological@OrderPsy')->name('psychological');
 
    Route::get('/volunteer', 'Online@renderOnlinePage')->name('volunteer');
+   Route::post('/volunteer','Online@MailToOnline')->name('volunteer');
 
    Route::get('/family', 'Family@renderFamilyPage')->name('family');
 
@@ -83,13 +83,10 @@ Route::group(['domain' => 'xn--d1aadekogaqcb.xn--p1ai'], function () {
    Route::get('/downloadExcel/{type}', 'Profile@downloadExcel');
    Route::get('/downloadExcel/xls/{id}', 'Profile@downloadExcelId');
 
+   Route::get('/admin/deletephoto/{id}/{name}', 'Admin@deletePhoto')->name('admin');
+   Route::get('/admin/deleteStudioPhoto/{shortname}/{name}', 'Admin@deleteStudioPhoto')->name('admin');
+
    // Журнал «»Васька»
    Route::get('/journalpages/{name}', 'JournalPages@getPage');
    Route::get('/articleslist/{name}', 'JournalArticles@getList');
    Route::get('/article/{id}', 'JournalArticles@getArticle');
-});
-
-// Route::group(['domain' => 'xn--h1adbpp.localhost'], function () {
-Route::group(['domain' => 'xn--h1adbpp.xn--d1aadekogaqcb.xn--p1ai'], function () {
-   Route::get('/', 'Index@renderIndexPageWideScreen')->name('index2');
-});

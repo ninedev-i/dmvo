@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 class GlobalComposer {
 
    public function compose(View $view) {
-
       $menu = [
          'О Доме' => 'about',
          'Мероприятия' => 'events',
@@ -16,6 +15,17 @@ class GlobalComposer {
          'Психологи' => 'psychological',
          'Волонтерский центр' => 'volunteer',
          'Семейный клуб' => 'family',
+         'Контакты' => 'contact'
+      ];
+
+      $menuWide = [
+         'Студии' => 'studio',
+         'Мероприятия' => 'events',
+         'Услуги' => 'service',
+         'Психологи' => 'psychological',
+         'Семейный клуб' => 'family',
+         'Волонтерский центр' => 'volunteer',
+         'О Доме' => 'about',
          'Контакты' => 'contact'
       ];
 
@@ -39,10 +49,12 @@ class GlobalComposer {
          $menu = array_merge( [ 'Админка' => 'admin' ], $menu );
       }
 
+      $isWideScreen = strpos($_SERVER['HTTP_HOST'], 'xn--h1adbpp') === 0 ? true : false;
 
       $view->with('menu', $menu);
+      $view->with('menuWide', $menuWide);
+      $view->with('isWideScreen', $isWideScreen);
       $view->with('menuWithIcons', $menuWithIcons);
-
    }
 
 }

@@ -8,11 +8,3 @@ AddDefaultCharset UTF-8
 </IfModule>
 
 RewriteRule (.+)/$ /$1 [L,R=301]
-
-RedirectPermanent /about.php http://xn--d1aadekogaqcb.xn--p1ai/about
-RedirectPermanent /events.php http://xn--d1aadekogaqcb.xn--p1ai/events
-RedirectPermanent /studio.php http://xn--d1aadekogaqcb.xn--p1ai/studio
-RedirectPermanent /service.php http://xn--d1aadekogaqcb.xn--p1ai/service
-RedirectPermanent /psychological.php http://xn--d1aadekogaqcb.xn--p1ai/psychological
-RedirectPermanent /online.php http://xn--d1aadekogaqcb.xn--p1ai/online
-RedirectPermanent /contact.php http://xn--d1aadekogaqcb.xn--p1ai/contact

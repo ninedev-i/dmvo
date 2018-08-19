@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ledger');
 * {margin: 0px; padding: 0px;}
 body {min-width: 800px; background-color: #dddede; color: #7b8b8e; font: 16px Helvetica, Arial, sans-serif; line-height: 24px;}
+object {pointer-events: none;}
 a {color: #384047;}
 h1 {font-size: 28px; margin-bottom: 10px; font-weight: 600;}
 h2, h2 a {font-size: 24px; margin-bottom: 10px; font-weight: 600; background-color: transparent; text-decoration: none;}
@@ -22,13 +23,19 @@ a.smallbutton {text-decoration: none;}
 .smallbutton.current {background-color: #0E3D59; text-decoration: underline; }
 .smallbutton:hover, .button:hover {background-color: #005a84;}
 .clear {clear: both;}
+.ellipsis {
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+}
 
 /* Меню */
 header {display: table;  position: relative; width: 94%; padding: 0px 3% 0px 3%;}
 .logo {width: 10%; vertical-align: middle; display: table-cell; padding-top: 10px;}
+.logo img {max-height: 59px; padding-top: 6px;}
 .menu-button {display: none;}
 header nav {width: 80%; display: table-cell; text-align: right; padding-top: 12px;}
-header nav a li {color: white; background-color: #006699; /*background-color: #dde5ea; color: #6894ab;*/ display: inline-block; text-align: center; margin-left: 1%; margin-top: 6px; padding: 1% 2%; cursor: pointer; text-decoration: none;}
+header nav a li {color: white; background-color: #006699; /*background-color: #dde5ea; color: #6894ab;*/ display: inline-block; text-align: center; margin-left: 1%; margin-top: 6px; padding: 1% 2%; cursor: pointer; text-decoration: none; text-transform: uppercase;}
 @media (max-width: 800px) {header nav a li {padding: 1%;}}
 header nav a li:hover {background-color: #005a84;}
 header nav a li.current {background-color: #0E3D59; text-decoration: underline; }
@@ -53,6 +60,30 @@ header nav a li .capitalize {text-transform: capitalize;}
 footer {width: 94%; text-align: center; margin: 0px auto;}
 footer address {font-style: normal; display: inline-block;}
 footer address a {background-color: transparent;}
+
+/* Главная студии */
+.studioContainer {
+   width: 100% !important;
+   display: flex;
+   justify-content: space-between;
+   border: 0px !important;
+   margin: 0px !important;
+}
+.studioContainer .studio {
+   flex-basis: 0;
+   flex-grow: 1;
+   border: 1px solid #E5E7E8;
+   max-width: 33%;
+}
+.studioContainer .studio .dirimage {
+   height: 250px;
+}
+.studioContainer .studio:nth-child(2) {
+   margin: 0px 2%;
+}
+.studio .info {
+   margin: 12px;
+}
 
 /* Новости */
 article {width: 99%; min-height: 90px; padding-top: 10px; border-bottom: 1px solid #E5E7E8; cursor: pointer;}

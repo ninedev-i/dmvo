@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Storage;
+use App\Studio;
 use App\Event;
 use DB;
 
@@ -11,10 +14,33 @@ class Index extends Controller {
    // Главная страница
    public function renderIndexPage() {
       $title = 'Дом молодежи Василеостровского района Санкт-Петербурга';
+      $isWide = strpos($_SERVER['HTTP_HOST'], 'xn--h1adbpp') === 0;
+      $mainPageTemplate = $isWide ? 'index_wide' : 'index';
 
       $events = Event::where('post_reliz', '!=', '')
          ->orderBy('date_to', 'desc')
          ->paginate(10);
+
+      $photos = [];
+      $studios = [];
+      if ($isWide) {
+         $studios = Studio::where('show_or_not', '=', '0')
+            ->orderByRaw("RAND()")
+            ->take(3)
+            ->get();
+
+         $randomStudiosNames = $studios->map(function ($item, $key) {
+           return $item->shortname;
+         });
+         $files = Storage::disk('images');
+         foreach ($randomStudiosNames as $key => $value) {
+            $pushedPhoto = $files->allFiles('/studio/'.$value);
+            $pushedPhoto = collect($pushedPhoto);
+            $pushedPhoto = !$pushedPhoto->isEmpty() ? $pushedPhoto->random() : '';
+            array_push($photos, $pushedPhoto);
+         }
+         $photos = collect($photos);
+      }
 
       $closestEvents = Event::where('date_to', '>=', date('Y-m-d'))
          ->where('tags', 'NOT LIKE', '%exhibition%')
@@ -36,7 +62,9 @@ class Index extends Controller {
          ->orderBy('date_from', 'ASC')
          ->get();
 
-      return View::make('index')
+      return View::make($mainPageTemplate)
+      ->with('studios', $studios)
+      ->with('photos', $photos)
       ->with('title', $title)
       ->with('slider', $slider)
       ->with('closestEvents', $closestEvents)

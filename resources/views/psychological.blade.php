@@ -98,16 +98,18 @@
    </script>
 
    <div id="content">
-      <h2 style="margin-top: 15px;">Ближайшие мероприятия отдела психологической поддержки и профориентации</h2>
-      @foreach ($futureEvents as $event_item)
-      <article>
-         <a href="events/{{$event_item->id}}">
-            {!! $event_item->photoPreview() !!}
-            <p class="news-title">{{ $event_item->title }}</p>
-            <p>{{ $event_item->shortDescription() }}</p>
-         </a>
-      </article>
-      @endforeach
+      @if(sizeof($futureEvents) > 0)
+         <h2 style="margin-top: 15px;">Ближайшие мероприятия отдела психологической поддержки и профориентации</h2>
+         @foreach ($futureEvents as $event_item)
+         <article>
+            <a href="events/{{$event_item->id}}">
+               {!! $event_item->photoPreview() !!}
+               <p class="news-title">{{ $event_item->title }}</p>
+               <p>{{ $event_item->shortDescription() }}</p>
+            </a>
+         </article>
+         @endforeach
+      @endif
 
       <h2 style="margin-top: 15px;">Архив мероприятий</h2>
       @foreach ($events as $events_item)
