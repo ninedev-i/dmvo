@@ -141,4 +141,8 @@ class Index extends Controller {
       ->with('exhibitions', $exhibitions)
       ->with('events', $events);
    }
+
+   public function renderStartPage() {
+      return View::make('start');
+   }
 }

@@ -42,6 +42,24 @@ header nav a li.current {background-color: #0E3D59; text-decoration: underline; 
 header nav a li .optimalsize {display: none;}
 header nav a li .capitalize {text-transform: capitalize;}
 
+.startPageButton {
+   display: inline-block;
+   text-align: center;
+   color: white;
+   font-weight: bold;
+   margin-right: 10px;
+   padding: 20px;
+   background-color: #006699;
+   margin-bottom: 20px;
+   cursor: pointer;
+   list-style: none;
+   display: block;
+   width: 500px;
+   margin: 30px auto;
+   text-decoration: none;
+   font-size: 22px;
+}
+
 /* Версия для слабовидящих */
 .changesize {text-align: center; margin: 10px auto; display: inline-block;}
 #changewordsize,#changewordsize1 {padding: 10px; background-color: #DC3522;}

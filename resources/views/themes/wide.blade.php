@@ -11,7 +11,7 @@
    <body>
       <header>
          <div class="logo">
-            <a href="{{URL::to('/')}}">
+            <a href="{{URL::to('/start')}}">
                <img src="{{URL::to('/public/img/logo.svg')}}" alt="Дом молодежи Василеостровского района" title="Дом молодежи Василеостровского района">
             </a>
          </div>
@@ -31,4 +31,5 @@
          <address itemscope itemtype="http://schema.org/Organization">СПб ГБУ «Дом молодёжи Василеостровского района Санкт-Петербурга», <span itemprop="streetAddress">Большой просп. В.О., 65, лит. А</span>, тел. <span itemprop="telephone">321-47-49</span>, <a href="mailto:dmvo@bk.ru" itemprop="email">dmvo@bk.ru</a></address>
       </footer>
    </body>
+   <script src="{{URL::to('/')}}/public/js/back_to_main_page.js"></script>
 </html>

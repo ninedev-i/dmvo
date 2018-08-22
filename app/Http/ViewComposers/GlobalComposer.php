@@ -21,11 +21,11 @@ class GlobalComposer {
       $menuWide = [
          'Студии' => 'studio',
          'Мероприятия' => 'events',
-         'Услуги' => 'service',
          'Психологи' => 'psychological',
          'Семейный клуб' => 'family',
          'Волонтерский центр' => 'volunteer',
          'О Доме' => 'about',
+         'Услуги' => 'service',
          'Контакты' => 'contact'
       ];
 

@@ -1,5 +1,6 @@
 <?php
    Route::get('/', 'Index@renderIndexPage')->name('index');
+   Route::get('/start', 'Index@renderStartPage')->name('index');
    Route::get('/test', 'Index@renderIndexPage2')->name('index2');
 
    Route::get('/about', 'PagesController@about')->name('about');
