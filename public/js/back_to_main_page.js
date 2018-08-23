@@ -20,7 +20,7 @@ function redirectToMain() {
 
 var timer;
 function testtimeout() {
-   timer = setTimeout(redirectToMain, 60000);
+   timer = setTimeout(redirectToMain, 120000);
 }
 
 function stoper()	{

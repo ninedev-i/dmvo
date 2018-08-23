@@ -33,14 +33,14 @@
     @endforeach
   </div>
   <div class="direction">
-    <div class="dirimage" style="background-image: url(public/img/studio/hand/photo_3.jpg); background-position: 50% 30%;"></div>
+    <div class="dirimage" style="background-image: url(public/img/vox.jpg); background-position: 50% 30%;"></div>
     <h3>Вокальное направление:</h3>
     @foreach ($vocalstudios as $vocalstudio)
       <li class="studio"><a href="studio/{{ $vocalstudio->shortname }}">{{ $vocalstudio->studio_name }}<?php if ($vocalstudio->price != "бесплатно") {echo '<span class="typefree"><img src="public/img/typenotfree.png"></span>';}?></a></li>
     @endforeach
   </div>
   <div class="direction">
-    <div class="dirimage" style="background-image: url(public/img/studio/timelines/eMK9cM5e2X4.jpg); background-position: 50% 40%;"></div>
+    <div class="dirimage" style="background-image: url(public/img/studio/timelines/eMK9cM5e2X4.jpg); background-position: 50% 35%;"></div>
     <h3>Художественное слово:</h3>
     @foreach ($poetrystudios as $poetrystudio)
       <li class="studio"><a href="studio/{{ $poetrystudio->shortname }}">{{ $poetrystudio->studio_name }}<?php if ($poetrystudio->price != "бесплатно") {echo '<span class="typefree"><img src="public/img/typenotfree.png"></span>';} ?></a></li>
@@ -61,14 +61,14 @@
     @endforeach
   </div>
   <div class="direction">
-    <div class="dirimage" style="background-image: url(public/img/studio/sky/2014-2015.jpg); background-position: 50% 60%;"></div>
+    <div class="dirimage" style="background-image: url(public/img/studio/sky/2014-2015.jpg); background-position: 50% 50%;"></div>
     <h3>Физкультурно-оздоровительное направление:</h3>
     @foreach ($fizrastudios as $fizrastudio)
       <li class="studio"><a href="studio/{{ $fizrastudio->shortname }}">{{ $fizrastudio->studio_name }}<?php if ($fizrastudio->price != "бесплатно") {echo '<span class="typefree"><img src="public/img/typenotfree.png"></span>';} ?></a></li>
     @endforeach
   </div>
   <div class="direction">
-    <div class="dirimage" style="background-image: url(public/img/studio/ourhome/13.jpg); background-position: 50% 60%;"></div>
+    <div class="dirimage" style="background-image: url(public/img/theater.jpg); background-position: 50% 60%;"></div>
     <h3>Театральное направление:</h3>
     @foreach ($theaterstudios as $theatrestudio)
       <li class="studio"><a href="studio/{{ $theatrestudio->shortname }}">{{ $theatrestudio->studio_name }}<?php if ($theatrestudio->price != "бесплатно") {echo '<span class="typefree"><img src="public/img/typenotfree.png"></span>';} ?></a></li>
