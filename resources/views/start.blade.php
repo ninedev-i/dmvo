@@ -9,7 +9,10 @@
          @yield('scripts')
       </head>
       <body>
-         <div class="page" style="background-color: inherit; text-align: center;">
+         <div class="startPage" style="background-color: inherit; text-align: center;">
+            <header>
+               <img src="public/img/logo_start.png" class="logoHome">
+            </header>
             <nav id="alldirections">
                <a href="{{URL::to('/studio')}}" class="directionStart">
                   <div class="dirimage" style="background-image: url(public/img/dance_studios.jpg); background-position: 50% 40%;"></div>
@@ -36,6 +39,9 @@
                   <h3>Контактная информация</h3>
                </a>
             </nav>
+            <footer>
+               <span>321-47-49</span> <span>доммолодежи.рф</span> <span>vk.com/dom65</span> <span>instagram.com/dom65</span>
+            </footer>
          </div>
       </body>
    </html>

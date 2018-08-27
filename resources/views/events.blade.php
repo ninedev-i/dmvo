@@ -70,6 +70,40 @@
    @endforeach
 @endif
 
+@if($news != '[]')
+   <h2>Городские и районные мероприятия</h2>
+   <a name="city"></a>
+   @foreach ($news as $new)
+      <div class="event_block" <?php if(file_exists(public_path('img/events/covers/event_id'.$new->id.'.jpg'))) {echo 'style="width: '.$new->imageWidth().'px;"';} ?>>
+         <a href="{{URL::to('/')}}/events/{{$new->id}}">
+            <div <?php if (!file_exists(public_path('img/events/covers/event_id'.$new->id.'.jpg'))) {
+               echo 'class="eventwithbg bgcolor'.substr($new->id, -1).'"';
+            } else {
+               echo ' style="line-height: 0px;"';
+            }?>>
+               @if(file_exists(public_path('img/events/covers/event_id'.$new->id.'.jpg')))
+               <img src="public/img/events/covers/event_id{{ $new->id }}.jpg" title="{{ $new->title }}" alt="{{ $new->title }}">
+               @else
+                  <div class="event_title">{{ $new->title }}</div>
+               @endif
+            </div>
+            <div class="date_row">
+               <div class="date_info"><?php
+               if ( $new->rus_date('m', strtotime( $new->date_from )) == $new->rus_date('m', strtotime( $new->date_to )) && $new->rus_date('j F', strtotime( $new->date_from )) != $new->rus_date('j F', strtotime( $new->date_to )) ) {
+                  echo $new->rus_date('j', strtotime( $new->date_from ) ).'-'.$new->rus_date('j', strtotime( $new->date_to ) ).' '.$new->rus_date('F', strtotime( $new->date_from ) );
+               } else {
+                  echo $new->rus_date('j F', strtotime( $new->date_from ) );
+                  if ($new->date_from != $new->date_to) {
+                     echo ' - '.$new->rus_date('j F', strtotime($new->date_to) );
+                  }
+               }
+               if ($new->what_time) { echo ', '.$new->what_time; }
+               ?></div>
+            </div>
+         </a>
+      </div>
+   @endforeach
+@endif
 <p><a href="events/past"><span class='smallbutton'>Архив мероприятий</span></a></p>
 
 @endsection

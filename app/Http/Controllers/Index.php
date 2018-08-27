@@ -43,6 +43,7 @@ class Index extends Controller {
       }
 
       $closestEvents = Event::where('date_to', '>=', date('Y-m-d'))
+         ->where('tags', 'NOT LIKE', '%news%')
          ->where('tags', 'NOT LIKE', '%exhibition%')
          ->where('show_or_not', '0')
          ->orderBy('date_from', 'asc')
@@ -50,11 +51,17 @@ class Index extends Controller {
          ->get();
 
       $exhibitions = Event::where('date_to', '>=', date('Y-m-d'))
+         ->where('tags', 'NOT LIKE', '%news%')
          ->where('tags', 'LIKE', '%exhibition%')
          ->where('show_or_not', '0')
          ->orderBy('date_from', 'asc')
          ->take(6)
          ->get();
+
+      $countCityEvents = Event::where('show_or_not', '=', '0')
+         ->where('date_to', '>=', date('Y-m-d'))
+         ->where('tags', 'LIKE', '%news%')
+         ->count();
 
       $slider = Event::where('right_column', '=', '1')
          ->where('show_or_not', '=', '0')
@@ -68,6 +75,7 @@ class Index extends Controller {
       ->with('title', $title)
       ->with('slider', $slider)
       ->with('closestEvents', $closestEvents)
+      ->with('countCityEvents', $countCityEvents)
       ->with('exhibitions', $exhibitions)
       ->with('events', $events);
    }

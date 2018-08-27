@@ -186,11 +186,37 @@ li.studio a:hover{color: white;}
 .direction a {text-decoration: none;}
 
 nav#alldirections {
-   height: 100%;
+   /* height: 100%; */
 }
 .directionStart {
-   float: left; margin: 40px 1%; width: 47%;
+   float: left; margin: 15px 1%; width: 47%;
 }
+.startPage {
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+   padding: 0 2%;
+}
+.startPage header {
+   height: 150px;
+   text-align: center;
+}
+.startPage header .logoHome {
+   height: 100px;
+   width: auto;
+   padding-top: 40px;
+}
+.startPage footer {
+   height: 60px;
+   display: flex;
+   justify-content: center;
+}
+.startPage footer span {
+   width: 250px;
+   color: #7b8b8e;
+   text-align: center;
+}
+
 a.directionStart {text-decoration: none;}
 .directionStart li.studio {margin-left: 10px; margin-bottom: 10px; display: block;}
 .directionStart .dirimage {margin-bottom: 15px; height: 200px; width: 100%; display: block; background-size: cover; background-position: center center; background-repeat: no-repeat;}

@@ -22,7 +22,7 @@ class Events extends Controller {
 
       $events = Event::where('show_or_not', '=', '0')
          ->where('date_to', '>=', date('Y-m-d'))
-         // ->where('tags', 'NOT LIKE', '%news%')
+         ->where('tags', 'NOT LIKE', '%news%')
          ->where('tags', 'NOT LIKE', '%exhibition%')
          ->orderBy('date_from', 'asc')
          ->get();
@@ -30,6 +30,12 @@ class Events extends Controller {
       $exhibitions = Event::where('show_or_not', '=', '0')
          ->where('date_to', '>=', date('Y-m-d'))
          ->where('tags', 'LIKE', '%exhibition%')
+         ->orderBy('date_from', 'desc')
+         ->get();
+
+      $news = Event::where('show_or_not', '=', '0')
+         ->where('date_to', '>=', date('Y-m-d'))
+         ->where('tags', 'LIKE', '%news%')
          ->orderBy('date_from', 'desc')
          ->get();
 
@@ -42,6 +48,7 @@ class Events extends Controller {
          ->with('currentDate', date('Y-m-d'))
          ->with('adminlink', $adminlink)
          ->with('events', $events)
+         ->with('news', $news)
          ->with('exhibitions', $exhibitions);
    }
 

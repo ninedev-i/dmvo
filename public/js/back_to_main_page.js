@@ -1,9 +1,9 @@
-(function start() {
+function start() {
    if (location.pathname !== '/start') {
       testtimeout();
       eventListeners();
    }
-}());
+}
 
 function eventListeners() {
    var el = document.querySelector('.page');
@@ -27,3 +27,5 @@ function stoper()	{
    clearTimeout(timer);
    testtimeout();
 }
+
+start();

@@ -7,7 +7,7 @@
 {!! $adminlink !!}
 
 {!! Form::open(['url' => '/events/search' , 'id' => 'searchForm']) !!}
-   {!! Form::text('eventTitle', $searchValue, ['style' => 'display: inline-block; width: calc(98% - 71px);']) !!}
+   {!! Form::text('eventTitle', $searchValue, ['style' => 'display: inline-block; width: calc(98% - 71px);', 'autofocus' => 'true']) !!}
    {!! Form::submit('Найти', ['style' => 'display: inline-block; margin-right: 0px;']) !!}
 {!! Form::close() !!}
 
