@@ -38,7 +38,9 @@
 
     @if($photos != '[]')
       @foreach ($photos as $photo)
-        <a href="{{ URL::to('/') }}/public/img/{{ $photo }}" data-fancybox="gallery"><img src="{{ URL::to('/') }}/public/img/{{ $photo }}" class="photo{{ $loop->iteration }} photo_of_event"></a>
+        <a href="{{ URL::to('/') }}/public/img/{{ $photo }}" data-fancybox="gallery">
+           <img src="{{ URL::to('/') }}/public/img/{{ $photo }}" class="photo{{ $loop->iteration }} photo_of_event" alt="{{$studio->studio_name}}" title="{{$studio->studio_name}}">
+        </a>
       @endforeach
     @endif
 

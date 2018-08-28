@@ -33,12 +33,6 @@ class Events extends Controller {
          ->orderBy('date_from', 'desc')
          ->get();
 
-      $news = Event::where('show_or_not', '=', '0')
-         ->where('date_to', '>=', date('Y-m-d'))
-         ->where('tags', 'LIKE', '%news%')
-         ->orderBy('date_from', 'desc')
-         ->get();
-
       if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/addevent">Добавить новое мероприятие</a></i>';
       } else {$adminlink = '';}
@@ -48,13 +42,12 @@ class Events extends Controller {
          ->with('currentDate', date('Y-m-d'))
          ->with('adminlink', $adminlink)
          ->with('events', $events)
-         ->with('news', $news)
          ->with('exhibitions', $exhibitions);
    }
 
    // Прошедшие мероприятия
    public function renderPastEventsPage() {
-      $title = 'Прошедшие мероприятия';
+      $title = 'Архив мероприятий';
       $searchValue = '';
 
       $events = Event::where('show_or_not', '=', '0')
@@ -74,6 +67,29 @@ class Events extends Controller {
          ->with('adminlink', $adminlink)
          ->with('searchValue', $searchValue)
          ->with('events', $events);
+   }
+
+   // Мероприятия не ДМВО
+   public function otherEvents() {
+      $title = 'Городские и районные мероприятия';
+      $events = Event::where('show_or_not', '=', '0')
+         ->where('date_to', '>=', date('Y-m-d'))
+         ->where('tags', 'LIKE', '%news%')
+         ->orderBy('date_from', 'asc')
+         ->get();
+
+      $exhibitions = [];
+
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+         $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/addevent">Добавить новое мероприятие</a></i>';
+      } else {$adminlink = '';}
+
+      return View::make('events')
+         ->with('title', $title)
+         ->with('currentDate', date('Y-m-d'))
+         ->with('adminlink', $adminlink)
+         ->with('events', $events)
+         ->with('exhibitions', $exhibitions);
    }
 
    // Поиск по мероприятиям
@@ -134,15 +150,11 @@ class Events extends Controller {
       $files = Storage::disk('images');
       $photos = $files->allFiles('/events/id'.$id);
 
-      if(sizeof($event)!=0) {
       return View::make('event')
          ->with('adminlink', $adminlink)
          ->with('photos', $photos)
          ->with('tags', $tags)
          ->with('event', $event);
-      } else {
-         return 'qwe';
-      }
    }
 
 }

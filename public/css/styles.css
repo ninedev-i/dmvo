@@ -19,8 +19,12 @@ a img {border: none;}
 .button {display: inline-block; text-align: center; margin-bottom: 5px; color: white; font-weight: bold; margin-right: 10px; padding: 20px; background-color: #006699; margin-bottom: 20px; cursor: pointer;}
 a.smallbutton {text-decoration: none;}
 .smallbutton {display: inline-block; text-align: center; color: white; margin-right: 10px; margin-bottom: 10px; padding: 10px; background-color: #006699; cursor: pointer;}
-.smallbutton.current {background-color: #0E3D59; text-decoration: underline; }
+.smallbutton.current {background-color: #0E3D59; text-decoration: underline;}
+.smallbutton.current:hover {background-color: #0E3D59;}
 .smallbutton:hover, .button:hover {background-color: #005a84;}
+.studios_news .smallbutton {background-color: #b5ddf1; color: #566163;}
+.studios_news .smallbutton:hover {background-color: #a4daf5;}
+.pageMenu {margin-bottom: 10px;}
 .clear {clear: both;}
 
 /* Меню */

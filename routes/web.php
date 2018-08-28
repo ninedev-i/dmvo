@@ -20,6 +20,7 @@
 
    Route::get('/events', 'Events@renderEventsPage')->name('events');
       Route::get('/events/past', 'Events@renderPastEventsPage')->name('events');
+      Route::get('/events/other', 'Events@otherEvents')->name('events');
       Route::get('/events/search={eventTitle}', 'Events@searchEventsPage')->name('events');
       Route::get('/events/{id}', 'Events@renderCurrentEventPage')->name('events');
 

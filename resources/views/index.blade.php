@@ -83,7 +83,7 @@
 </div>
 
 @if($countCityEvents > 0)
-   <a href='{{URL::to('/')}}/events#city'><h2 class="mainpagetitle">Городские и районные мероприятия</h2></a>
+   <a href="{{URL::to('/events/other')}}"><h2 class="mainpagetitle">Городские и районные мероприятия</h2></a>
 @endif
 
 <div id="content">

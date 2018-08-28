@@ -3,8 +3,8 @@
    <head>
       <title>@yield('title')</title>
       <link rel="stylesheet" type="text/css" href="{{URL::to('/')}}/public/css/styles.css" />
-      <link rel="shortcut icon" href="{{URL::to('/')}}/public/favicon.ico">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" href="{{URL::to('/')}}/public/favicon.ico" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       @yield('scripts')
       <script>$(function(){$(".menu-button").click(function(){$("nav").slideToggle();});});</script>
