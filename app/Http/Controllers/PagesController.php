@@ -93,6 +93,7 @@ class PagesController extends Controller  {
                ->first();
 
             $studiolist = Studio::where('teacher', 'like' , $id)
+               ->where('show_or_not', '=', '0')
                ->get();
 
             $timetable = Timetable::where('user_id', $id)

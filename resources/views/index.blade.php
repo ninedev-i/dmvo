@@ -15,10 +15,8 @@
    @foreach ($slider as $slider_item)
       <li><a href="{{URL::to('/')}}/events/{{$slider_item->id}}"><img src="public/img/events/covers/event_id{{$slider_item->id}}.jpg" alt="{{ $slider_item->title }}" title="{{ $slider_item->title }}" /></a></li>
    @endforeach
-   <li><a href="{{URL::to('/')}}/studio/fitnes"><img src="public/img/fitness.jpg" alt="Тренажерный зал"></a></li>
-   <li><a href="https://vk.com/dom65" target="_blank"><img src="public/img/vk.jpg" alt="Группа Дома молодежи вконтакте"></a></li>
-   <!-- <li><a href="{{URL::to('/')}}/service/transeforce"><img src="img/transforce.jpg" alt="Трансфорс"></a></li>
-   <li><a href="{{URL::to('/')}}/online"><img src="public/img/op.jpg" alt="Молодежная приемная"></a></li> -->
+   <li><a href="{{URL::to('/')}}/studio/fitnes"><img src="public/img/fitness2.jpg" alt="Тренажерный зал" title="Тренажерный зал"></a></li>
+   <li><a href="https://vk.com/dom65" target="_blank"><img src="public/img/vk.jpg" alt="Группа Дома молодежи вконтакте" title="Тренажерный зал"></a></li>
 </ul>
 </div>
 <button class="sliderbutton next" id="next"></button>
