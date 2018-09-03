@@ -31,11 +31,11 @@
       if ($event->content) {
          echo "<p><b>Пост-релиз</b> <a href='".URL::to('events/'.$event->id.'?show=anons')."' style='margin-left: 10px;'>Анонс</a></p>";
       }
-      echo $event->post_reliz;
+      echo "<main>".$event->post_reliz."</main>";
    } else {
       if ($event->post_reliz) {echo "<p><a href='".URL::to('events/'.$event->id)."' style='margin-right: 10px;'>Пост-релиз</a> <b>Анонс</b></p>";}
       if (file_exists("img/events/covers/event_id".$event->id.".jpg")) {echo "<a href='".URL::to('public/img/events/covers')."/event_id".$event->id.".jpg' data-fancybox><img src='".URL::to('public/img/events/covers')."/event_id".$event->id.".jpg' style='width: 300px; float: right; margin: 0 15px 15px 15px;' alt='".$event->title."' title='".$event->title."'></a>";}
-      echo $event->content;
+      echo "<main>".$event->content."</main>";
    }
    ?>
    <div class="photo_news">

@@ -11,9 +11,9 @@ use Auth;
 use URL;
 use DB;
 
-class Online extends Controller {
+class Volunteer extends Controller {
 
-   public function renderOnlinePage() {
+   public function renderVolunteerPage() {
 
       $page = DB::table('pages')
          ->where('id', '12')
@@ -29,13 +29,13 @@ class Online extends Controller {
       $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/12">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
-      return View::make('online')
+      return View::make('volunteer')
          ->with('adminlink', $adminlink)
          ->with('events', $events)
          ->with('page', $page);
    }
 
-   public function MailToOnline(Request $request){
+   public function MailToVolunteer(Request $request){
       $data = [
          'name' => $request['name'],
          'email' => $request['email'],

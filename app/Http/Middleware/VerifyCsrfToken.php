@@ -12,7 +12,7 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        '/online',
+        '/volunteer',
         '/service/transeforce',
         '/psychological',
         '/psychological/consult',

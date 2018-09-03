@@ -41,8 +41,8 @@
       Route::get('/psychological/training', 'Psychological@renderTrainingPage')->name('psychological');
       Route::post('/psychological', 'Psychological@OrderPsy')->name('psychological');
 
-   Route::get('/volunteer', 'Online@renderOnlinePage')->name('volunteer');
-   Route::post('/volunteer','Online@MailToOnline')->name('volunteer');
+   Route::get('/volunteer', 'Volunteer@renderVolunteerPage')->name('volunteer');
+   Route::post('/volunteer','Volunteer@MailToVolunteer')->name('volunteer');
 
    Route::get('/family', 'Family@renderFamilyPage')->name('family');
 

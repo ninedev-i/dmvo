@@ -165,6 +165,7 @@ li.studios_news {display: inline-block;}
 .bgcolor8 {background-color: #79BD8F;}
 .bgcolor9 {background-color: #BEEB9F;}
 .bgcolor0 {background-color: #FFFF9D;}
+main a {pointer-events: none;}
 
 .year {padding: 15px 0px 0px 0px; text-align: center; display: block;}
 .old_events li {margin-left: 0px !important; list-style: none; border-bottom: 1px solid #EDEFF0;}

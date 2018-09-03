@@ -15,7 +15,7 @@ function eventListeners() {
 }
 
 function redirectToMain() {
-   location.assign('start');
+   location.assign('http://' + location.host + '/start');
 }
 
 var timer;

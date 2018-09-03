@@ -12,6 +12,14 @@
 
 @section('content')
    {!! $adminlink !!}
+   <div class="bytheway">
+      <b>Режим работы:</b><br>С 10:00 до 19:00<br>
+      <b>Руководитель:</b><br>  <a href="about/people/82"><img width="100%" src="http://доммолодежи.рф/public/img/users/aa.levshin.jpg">  Левшин Андрей Александрович</a><br>
+      <b>Телефон:</b>+7 (981) 983-04-10<br>
+      @if (!$isWideScreen )
+        <a href="https://vk.com/volcenterdmvo" target="_blank">Группа вконтакте</a>
+      @endif
+   </div>
    {!! $page->content !!}
 
    <div class='photo_news'>

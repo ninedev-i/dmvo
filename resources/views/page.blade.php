@@ -8,6 +8,8 @@
 @section('title', $page->title)
 
 @section('content')
-  {!! $adminlink !!}
-  {!! $page->content !!}
+   {!! $adminlink !!}
+   <main>
+      {!! $page->content !!}
+   </main>
 @endsection

@@ -19,7 +19,10 @@
    <a href="about/people/39"><img src="http://доммолодежи.рф/public/img/users/ar.stepanova.jpg" style="width: 100%;">
    Степанова Анжелика Разимовна</a><br>
    <b>Телефон:</b> 323-58-75<br>
-   <a href="https://vk.com/familclub_dmvo ">Группа вконтакте</a>
+   @if (!$isWideScreen )
+      <a href="https://vk.com/familclub_dmvo" target="_blank">Группа вконтакте</a>
+   @endif
+
    </div>
 
    {!! $page->content !!}

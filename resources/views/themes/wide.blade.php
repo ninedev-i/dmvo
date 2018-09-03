@@ -4,7 +4,7 @@
       <title>@yield('title')</title>
       <link rel="stylesheet" type="text/css" href="{{URL::to('/')}}/public/css/styles_wide_screen.css" />
       <link rel="shortcut icon" href="{{URL::to('/')}}/public/favicon.ico" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="viewport" content="width=device-width, user-scalable=no" />
       <meta name="robots" content="noindex, nofollow" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       @yield('scripts')
@@ -29,7 +29,7 @@
          @yield('content')
       </div>
       <footer>
-         <address itemscope itemtype="http://schema.org/Organization">СПб ГБУ «Дом молодёжи Василеостровского района Санкт-Петербурга», <span itemprop="streetAddress">Большой просп. В.О., 65, лит. А</span>, тел. <span itemprop="telephone">321-47-49</span>, <a href="mailto:dmvo@bk.ru" itemprop="email">dmvo@bk.ru</a></address>
+         <address itemscope itemtype="http://schema.org/Organization">СПб ГБУ «Дом молодёжи Василеостровского района Санкт-Петербурга», <span itemprop="streetAddress">Большой просп. В.О., 65, лит. А</span>, тел. <span itemprop="telephone">321-47-49</span>, <a href="#" itemprop="email">dmvo@bk.ru</a></address>
       </footer>
    </body>
    <script src="{{URL::to('/')}}/public/js/back_to_main_page.js"></script>

@@ -70,14 +70,14 @@ class Index extends Controller {
          ->get();
 
       return View::make($mainPageTemplate)
-      ->with('studios', $studios)
-      ->with('photos', $photos)
-      ->with('title', $title)
-      ->with('slider', $slider)
-      ->with('closestEvents', $closestEvents)
-      ->with('countCityEvents', $countCityEvents)
-      ->with('exhibitions', $exhibitions)
-      ->with('events', $events);
+         ->with('studios', $studios)
+         ->with('photos', $photos)
+         ->with('title', $title)
+         ->with('slider', $slider)
+         ->with('closestEvents', $closestEvents)
+         ->with('countCityEvents', $countCityEvents)
+         ->with('exhibitions', $exhibitions)
+         ->with('events', $events);
    }
 
    public function renderIndexPage2() {
@@ -108,11 +108,11 @@ class Index extends Controller {
          ->get();
 
       return View::make('index2')
-      ->with('title', $title)
-      ->with('slider', $slider)
-      ->with('closestEvents', $closestEvents)
-      ->with('exhibitions', $exhibitions)
-      ->with('events', $events);
+         ->with('title', $title)
+         ->with('slider', $slider)
+         ->with('closestEvents', $closestEvents)
+         ->with('exhibitions', $exhibitions)
+         ->with('events', $events);
    }
 
    public function renderIndexPageWideScreen() {
@@ -143,11 +143,11 @@ class Index extends Controller {
          ->get();
 
       return View::make('widescreen/index')
-      ->with('title', $title)
-      ->with('slider', $slider)
-      ->with('closestEvents', $closestEvents)
-      ->with('exhibitions', $exhibitions)
-      ->with('events', $events);
+         ->with('title', $title)
+         ->with('slider', $slider)
+         ->with('closestEvents', $closestEvents)
+         ->with('exhibitions', $exhibitions)
+         ->with('events', $events);
    }
 
    public function renderStartPage() {

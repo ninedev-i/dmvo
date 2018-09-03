@@ -281,16 +281,14 @@ class PagesController extends Controller  {
    // Контакты
    public function contacts() {
       $page = DB::table('pages')
-      ->where('id', '6')
-      ->first();
+         ->where('id', '6')
+         ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
-         $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/6">Редактировать страницу</a></i>';
-      } else {$adminlink = '';}
+      $adminlink = (Auth::check() && in_array(Auth::user()->id, [1, 65]) ? '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/6">Редактировать страницу</a></i>' : '');
 
-      return View::make('page')
-      ->with('adminlink', $adminlink)
-      ->with('page', $page);
+      return View::make('contact')
+         ->with('adminlink', $adminlink)
+         ->with('page', $page);
    }
 
 }
