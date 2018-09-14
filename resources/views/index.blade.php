@@ -69,6 +69,11 @@
    </ul>
 @endif
 
+<a href="http://журнал.доммолодежи.рф/" target="_blank">
+   <h2 class="mainpagetitle">Молодёжный онлайн-журнал В@ська</h2>
+   <img src="http://журнал.доммолодежи.рф/img/logo.png" height="80" alt="Молодёжный онлайн-журнал В@ська" title="Молодёжный онлайн-журнал В@ська">
+</a>
+
 <h2 class="mainpagetitle">Важные ссылки</h2>
 <div>
   <a href="http://voadm.spb.ru/" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/admvo.jpg')}}"></a>

@@ -17,7 +17,8 @@ class JournalArticles extends Controller {
 
    public function getList($category) {
       $articles = JournalArticle::where('category', $category)
-         ->orderBy('date', 'asc')
+         ->where('show_article', 'true')
+         ->orderBy('date', 'desc')
          ->get();
 
       return response()->json($articles);
