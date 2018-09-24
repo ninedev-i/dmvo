@@ -24,4 +24,21 @@ class JournalArticles extends Controller {
       return response()->json($articles);
    }
 
+   public function get_last_articles($current_cat, $current_id) {
+      $categories = ['people', 'films', 'lifestyle', 'soul', 'hobby'];
+      $list = [];
+
+      foreach ($categories as $key => $cat) {
+         $articles = JournalArticle::where('category', $cat)
+            ->where('id', '!=', $current_id)
+            ->orderByRaw('rand()')
+            ->first(['id', 'title', 'category']);
+         if ($articles !== null) {
+            array_push($list, $articles);
+         }
+      }
+
+      return $list;
+   }
+
 }
