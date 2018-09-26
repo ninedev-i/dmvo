@@ -55,7 +55,22 @@
   {!! Form::submit('Изменить мероприятие') !!}
   {!! Form::close() !!}
 
-<script>$('button').click(function(e) { e.preventDefault(); var whatToDel = $(this).val().substr(13); $.ajax({type: "GET", url: "../../admin/deletephoto/"+whatToDel}); $(this).parent().fadeOut(); });</script>
+<script>
+   $('button').click(function(e) {
+      e.preventDefault();
+      var deleteArray = $(this).val().split('/');
+      $.ajax({
+         type: 'GET',
+         url: window.location.origin + '/admin/deletephoto/' + deleteArray[0] + '/' + deleteArray[3],
+         success: function(result) {
+            $(this).parent().fadeOut();
+         }.bind(this),
+         error: function(request, status, errorThrown) {
+            console.error('-' + status);
+         }
+      });
+   });
+</script>
 <script src="{{URL::to('/')}}/public/js/wyseditor.js"></script>
 <script>
    new ContentEditor(1, true);
