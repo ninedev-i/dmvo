@@ -18,6 +18,7 @@ class Index extends Controller {
       $mainPageTemplate = $isWide ? 'index_wide' : 'index';
 
       $events = Event::where('post_reliz', '!=', '')
+         ->where('show_or_not', '0')
          ->orderBy('date_to', 'desc')
          ->paginate(10);
 
@@ -84,6 +85,7 @@ class Index extends Controller {
       $title = 'Дом молодежи Василеостровского района Санкт-Петербурга';
 
       $events = Event::where('post_reliz', '!=', '')
+         ->where('show_or_not', '0')
          ->orderBy('date_to', 'desc')
          ->paginate(10);
 
@@ -119,6 +121,7 @@ class Index extends Controller {
       $title = 'Дом молодежи Василеостровского района Санкт-Петербурга';
 
       $events = Event::where('post_reliz', '!=', '')
+         ->where('show_or_not', '0')
          ->orderBy('date_to', 'desc')
          ->paginate(10);
 
