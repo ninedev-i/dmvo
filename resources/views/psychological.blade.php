@@ -12,10 +12,15 @@
 
 @section('content')
    {!! $adminlink !!}
+   @if (!$isWideScreen )
+      <div id="vk_groups" style="float: right; margin-left: 10px;"></div>
+   @endif
    {!! $page->content !!}
 
    <p>Позвонить нам: 321-24-61 или <span class="smallbutton" data-fancybox data-src="#hidden-content">Записаться online</span></p>
-   <p><a href="https://vk.com/topic-123029997_37211146">Ваши отзывы, пожелания, вопросы</a></p>
+   @if (!$isWideScreen )
+      <p><a href="https://vk.com/topic-123029997_37211146">Ваши отзывы, пожелания, вопросы</a></p>
+   @endif
    <h2>Наши специалисты</h2>
    <div class='photo_news' style='display: -webkit-flex; display: flex; justify-content: flex-start; -webkit-align-items: top; align-items: top;'>
    <a href='about/people/85' class='psy'><img src='{{URL::to('/')}}/public/img/users/np.aksenova.jpg' style='height: 110px; float: left; margin-right: 5px;'><b>Аксёнова Наталья Павловна</b><br />заведующая отделом<br />часы приёма:<br />вт 16:00-18:00, чт 9:00 - 11:00</p></a>
@@ -24,10 +29,10 @@
    </div>
    <h2 style='margin-bottom: 15px; margin-top: 10px;'>Направления работы</h2>
    <div style='display: -webkit-flex; display: flex; -webkit-justify-content: space-between; justify-content: space-between; -webkit-align-items: top; align-items: top;'>
-   <div class='psy' style='padding: 1%; background-color: #f4f4f4;'><a href='psychological/consult' style='display: block; text-decoration: none;'><h3>Психологическое консультирование</h3><p>Оказание психологом помощи людям, которые нуждаются в ней, испытывают трудности с самоопределением, с отношениями в семье, со сверстниками, страдают от неуверенности в себе, переживаний обиды, гнева, апатии, испытывают зависимость от чего-либо. <i>Подробнее...</i></a></p></div>
-   <div class='psy' style='padding: 1%; background-color: #f4f4f4;'><a href='psychological/group' style='display: block; text-decoration: none;'><h3>Групповые формы работы</h3><p>Группы – это особое направление в консультировании, которое часто оказывается эффективным средством помощи в решении личностных и межличностных проблем. Групповое взаимодействие весьма важно для самовыражения личности. <i>Подробнее...</i></a></p></div>
-   <div class='psy' style='padding: 1%; background-color: #f4f4f4;'><a href='psychological/proforientation' style='display: block; text-decoration: none;'><h3>Профориентация и диагностика</h3><p>Программа профориентации создана для подростков и молодёжи. Она помогает понять, кем ты хочешь быть, какие у вас есть склонности, способности, интересы. Вы сможете ответить себе на вопрос - как сделать самостоятельный осознанный правильный выбор. <i>Подробнее...</i></a></p></div>
-   <div class='psy' style='padding: 1%; background-color: #f4f4f4;'><a href='psychological/training' style='display: block; text-decoration: none;'><h3>Тренинги</h3><p>Тренинг – это активная форма работы, направленная на изменение мировоззрения, поведения, способа самовыражения посредством разыгрывания социальных ситуаций, выполнения упражнений с последующим анализом результатов. <i>Подробнее...</i></a></p></div>
+   <div class='psy' style='padding: 1%; background-color: #f4f4f4;'><a href='psychological/consult' style='display: block; text-decoration: none;'><h3>Психологическое консультирование</h3><p>Оказание психологом помощи людям, которые нуждаются в ней, испытывают трудности с самоопределением, с отношениями в семье, со сверстниками, страдают от неуверенности в себе, переживаний обиды, гнева, апатии, испытывают зависимость от чего-либо. <i>Подробнее…</i></a></p></div>
+   <div class='psy' style='padding: 1%; background-color: #f4f4f4;'><a href='psychological/group' style='display: block; text-decoration: none;'><h3>Групповые формы работы</h3><p>Группы – это особое направление в консультировании, которое часто оказывается эффективным средством помощи в решении личностных и межличностных проблем. Групповое взаимодействие весьма важно для самовыражения личности. <i>Подробнее…</i></a></p></div>
+   <div class='psy' style='padding: 1%; background-color: #f4f4f4;'><a href='psychological/proforientation' style='display: block; text-decoration: none;'><h3>Профориентация и диагностика</h3><p>Программа профориентации создана для подростков и молодёжи. Она помогает понять, кем ты хочешь быть, какие у вас есть склонности, способности, интересы. Вы сможете ответить себе на вопрос - как сделать самостоятельный осознанный правильный выбор. <i>Подробнее…</i></a></p></div>
+   <div class='psy' style='padding: 1%; background-color: #f4f4f4;'><a href='psychological/training' style='display: block; text-decoration: none;'><h3>Тренинги</h3><p>Тренинг – это активная форма работы, направленная на изменение мировоззрения, поведения, способа самовыражения посредством разыгрывания социальных ситуаций, выполнения упражнений с последующим анализом результатов. <i>Подробнее…</i></a></p></div>
    </div>
 
    <div style="display: none;" id="hidden-content">
