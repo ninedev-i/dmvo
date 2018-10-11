@@ -67,6 +67,11 @@ return [
             'root' => storage_path('../public/img/'),
             // 'root' => storage_path('../../www/img/'),
         ],
+
+        'attachments' => [
+            'driver' => 'local',
+            'root' => storage_path('../public/attachments/'),
+        ]
     ],
 
 ];

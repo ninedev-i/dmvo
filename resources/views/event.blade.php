@@ -38,6 +38,12 @@
       echo "<main>".$event->content."</main>";
    }
    ?>
+   <div id="app">
+      <Attachments
+         data="{{$attachments}}"
+         eventId="{{$event->id}}">
+      </Attachments>
+   </div>
    <div class="photo_news">
       @if($photos != '[]')
          @foreach ($photos as $photo)
@@ -56,4 +62,5 @@
    }
    ?>
    <div class="clear"></div>
+   <script src="{{URL::to('/')}}/public/js/app.js"></script>
 @endsection

@@ -57,13 +57,16 @@
    Route::get('/admin/editpage/{id}', 'Admin@getEditCurrentPage')->name('admin');
    Route::post('/admin/editpage/{id}', 'Admin@postEditCurrentPage')->name('admin');
    Route::post('/admin/add_attachement', 'Attachments@add');
+   Route::post('/admin/delete_attachement', 'Attachments@delete');
+   Route::post('/admin/update_attachement', 'Attachments@update');
+   Route::get('/admin/get_attachements/{id}', 'Attachments@get');
 
    Route::get('/admin/editevent', 'Admin@EditEvents')->name('admin');
    Route::get('/admin/addevent', 'Admin@getAddEvent')->name('admin');
    Route::post('/admin/addevent', 'Admin@postAddEvent')->name('admin');
    Route::get('/admin/editevent/{id}', 'Admin@getEditCurrentEvent')->name('admin');
    Route::post('/admin/editevent/{id}', 'Admin@postEditCurrentEvent')->name('admin');
-   Route::get('/admin/deleteevent/{id}', 'Admin@deleteCurrentEvent')->name('admin');
+   Route::get('/admin/deleteevent/{event_id}', 'Admin@deleteCurrentEvent')->name('admin');
 
    Route::get('/admin/editstudio', 'Admin@EditStudios')->name('admin');
    Route::get('/admin/addstudio', 'Admin@getAddStudio')->name('admin');
