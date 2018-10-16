@@ -20,7 +20,10 @@ class Studios extends Controller {
       $title = 'Студии и секции дома молодежи Василеостровского района';
 
       if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
-         $adminlink = '<i class="adminpanel"><a href="admin/addstudio">Добавить новую студию</a></i>';
+         $adminlink = '<i class="adminpanel">
+                          <a href="admin/addstudio">Добавить новую студию</a>
+                          <a href="admin/editstudio" style="margin-left: 10px;">Список всех студий</a>
+                       </i>';
       } else {$adminlink = '';}
 
 

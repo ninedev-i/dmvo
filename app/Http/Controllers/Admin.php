@@ -45,7 +45,7 @@ class Admin extends Controller {
 
    // Редактировать студии – список
   public function EditStudios() {
-     $title = 'Редактировать Студии';
+     $title = 'Список всех студий';
      $list = DB::table('studio')
         ->orderBy('studio_name', 'asc')
         ->get();
@@ -297,7 +297,7 @@ class Admin extends Controller {
       DB::table('events')
          ->where('id', $id)
          ->update(['show_or_not' => 1]);
-         
+
        return redirect('http://доммолодежи.рф/events');
     }
 

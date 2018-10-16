@@ -15,7 +15,7 @@
       <tr><td>{!! Form::label('studio_name', 'Название') !!}</td><td>{!! Form::text('studio_name', '') !!}</td></tr>
       <tr><td>{!! Form::label('shortname', 'Короткое имя') !!}</td><td>{!! Form::text('shortname', '') !!}</td></tr>
       <tr><td>{!! Form::label('age_min', 'Возраст') !!}</td><td>{!! Form::text('age_min', '', ['style' => 'display: inline-block; width: 30px;']) !!} – {!! Form::text('age_max', '', ['style' => 'display: inline-block; width: 30px;']) !!}</td></tr>
-      <tr><td>{!! Form::label('price', 'Стоимость') !!}</td><td>{!! Form::text('price', '') !!}</td></tr>
+      <tr><td>{!! Form::label('price', 'Стоимость') !!}</td><td>{!! Form::text('price', 'бесплатно') !!}</td></tr>
       <tr><td>Руководитель</td><td>
          <select class='chosen-people' name='teacher[]' multiple>
            <option value=''></option>
@@ -44,14 +44,14 @@
          </select>
          <script>$('.chosen-select').chosen({ search_contains: true });</script>
       </td></tr>
-      <tr><td>Расписание<br /><input type="radio" id="showtext" name="whattoshow" checked><label for="showtext">текст</label><input type="radio" name="whattoshow" id="showhtml"><label for="showhtml">html</label></td><td><div class="mycontent" contenteditable></div>{!! Form::textarea('timetable', '', ['class' => 'hiddenarea']) !!}</td></tr>
-      <tr><td>Описание<br /><input type="radio" id="showtext1" name="whattoshow1" checked><label for="showtext1">текст</label><input type="radio" name="whattoshow1" id="showhtml1"><label for="showhtml1">html</label></td><td><div class="mycontent1" contenteditable></div>{!! Form::textarea('content', '', ['class' => 'hiddenarea1']) !!}</td></tr>
+      <tr><td>Расписание<br /><input type="radio" id="showtext1" name="whattoshow1" checked><label for="showtext1">текст</label><input type="radio" name="whattoshow1" id="showhtml1"><label for="showhtml1">html</label></td><td><div class="mycontent1" contenteditable></div>{!! Form::textarea('timetable', '', ['class' => 'hiddenarea1']) !!}</td></tr>
+      <tr><td>Описание<br /><input type="radio" id="showtext2" name="whattoshow2" checked><label for="showtext2">текст</label><input type="radio" name="whattoshow2" id="showhtml2"><label for="showhtml2">html</label></td><td><div class="mycontent2" contenteditable></div>{!! Form::textarea('content', '', ['class' => 'hiddenarea2']) !!}</td></tr>
       <tr><td>{!! Form::label('achievements', 'Достижения') !!}</td><td>{!! Form::text('achievements', '', ['style' => 'height: 45px;']) !!}</td></tr>
       <tr><td>Фотографии</td><td><input name="upload_photos[]" type="file" multiple="true" /></td></tr>
    </table>
    {!! Form::submit('Добавить студию') !!}
    {!! Form::close() !!}
-   
+
    <script src="{{URL::to('/')}}/public/js/wyseditor.js"></script>
    <script>
       new ContentEditor(1, true);

@@ -153,20 +153,11 @@ form.searchform select {height: 37px; color: #7b8b8e; border: 1px solid #006699;
 .age {display: inline-block;}
 .spisok:hover, .spisok:hover a {color: red; cursor: pointer; text-decoration: underline;}
 .photostudio {margin: 6px auto;}
-.photo1, .photo2, .photo3, .photo4, .photo5, .photo6 {
-	 /*-webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    filter: blur(2px);
-		-ms-filter: blur(2px);
-		filter: url('img/blur.svg#blur');
-		filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=5);
-		overflow: hidden;	display: inline-block; position: relative; width: 15.6%; height: 120px; margin-right: 1%; background-size: cover; background-position: center center;*/}
-img.noblur {height: 120px; max-width: 189px;}
-.noblurcontainer {position: relative; display: inline-block; text-align: center; margin-right: 1%; margin-left: -16.6%; z-index: 100; width: 15.6%; height: 120px;}
+.photostudio a {text-decoration: none;}
 .photo7, .photo8, .photo9, .photo10 {display: none;}
 .bytheway {width: 200px; color: black; background: #B4DCED; float: right; margin-left: 10px; margin-bottom: 5px; padding: 10px; font-size: 0.85em;}
 .bytheway  br {line-height: 2px;}
-.bytheway  a {font-size: 14px;}
+.bytheway .site_link {font-size: 14px; text-decoration: underline; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 li.ournews a {padding: 5px; background-color: #B4DCED;}
 li.ournews {list-style: none; margin-bottom: 6px;}
 .photowithoutfuckingblur {overflow: hidden;	display: inline-block; position: relative; width: 15.6%; height: 170px; margin-right: 1%; background-size: cover; background-position: center center;}
@@ -227,6 +218,7 @@ input[type='radio'] {margin-right: 3px; margin-left: 7px;}
 label.adminstudio {margin-right: 6px; padding: 4px;}
 input[type='checkbox']:checked + label {background-color: #B4DCED;}
 .editPhotos {margin-bottom: 10px; padding-bottom: 10px;}
+.deleted a {color: red;}
 
 /* Профиль */
 .profileTimetable {width: 100%; border-collapse: collapse;}
@@ -287,8 +279,6 @@ button.next {background-image: url('../img/arrow_right.png'); margin: 0px; float
 	.searchblock {margin-left: 0px;}
 	.age {margin-left: 0px; display: block;}
 	.photo1, .photo2, .photo3, .photo4, .photo5, .photo6  {width: 48%;}
-	.noblurcontainer  {width: 48%; margin-left: -48%;}
-	/*img.noblur {max-width: 189px;}*/
 	li.ournews a {padding: 5px; background-color: transparent;}
 	li.ournews {list-style: circle; margin-bottom: 6px;}
 

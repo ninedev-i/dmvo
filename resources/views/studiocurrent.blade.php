@@ -26,7 +26,7 @@
       {!! $studio->phone !!}<br />
     @endif
     @if ( $studio->link && !$isWideScreen )
-      <a href="{{ $studio->link }}" target="_blank" style="text-decoration: underline;">{{ $studio->link }}</a>
+      <div class="site_link"><a href="{{$studio->link}}" title="{{$studio->link}}" target="_blank" class="site_link">{{ $studio->link }}</a></div>
     @endif
 </div>
   {!! $studio->content !!}
