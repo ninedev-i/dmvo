@@ -121,10 +121,14 @@ class PagesController extends Controller  {
          // Руководство
          public function aboutAdministration() {
             $title = 'Руководство дома молодежи';
-            $people = User::where('show_or_not', '!=', 'false')
-               ->where('role', 'like', '%administration%')
-               ->orderByRaw(DB::raw('FIELD(id, 57, 48, 58, 59, 60, 61, 84, 52, 63, 64, 65, 55)'))
+            $director = User::where('id', '=', '57')
                ->get();
+            $administration = User::where('show_or_not', '!=', 'false')
+               ->where('role', 'like', '%administration%')
+               ->where('id', '!=', '57')
+               ->orderBy('name')
+               ->get();
+            $people = $director->merge($administration);
             $currentLink = 'administration';
             $content = '';
             $showStudios = false;
