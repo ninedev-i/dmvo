@@ -73,19 +73,19 @@
 
 <h2 class="mainpagetitle">Важные ссылки</h2>
 <div>
-  <a href="http://voadm.spb.ru/" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/admvo.jpg')}}"></a>
-  <a href="http://gov.spb.ru/gov/otrasl/kpmp/" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/commol.jpg')}}"></a>
+  <a href="https://voadm.spb.ru/" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/admvo.jpg')}}"></a>
+  <a href="https://gov.spb.ru/gov/otrasl/kpmp/" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/commol.jpg')}}"></a>
   <a href="https://tvoybudget.spb.ru/ " rel="nofollow" target="blank"><img src="{{URL::to('/public/img/budget.jpg')}}"></a>
-  <a href="http://spbtolerance.ru/" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/tolerance.jpg')}}"></a>
-  <a href="http://www.zakon.gov.spb.ru/hot_line" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/corrupt.jpg')}}"></a>
+  <a href="https://spbtolerance.ru/" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/tolerance.jpg')}}"></a>
+  <a href="https://www.zakon.gov.spb.ru/hot_line" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/corrupt.jpg')}}"></a>
   <a href="about.php?page=gosuslugi" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/gosuslugi.png')}}"></a>
-  <a href="http://www.xn--c1adbjbwilr5m.xn--p1ai/" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/heroname.jpg')}}"></a>
+  <a href="https://www.xn--c1adbjbwilr5m.xn--p1ai/" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/heroname.jpg')}}"></a>
 </div>
 <!--<h2 style="margin-bottom: 10px;">Спонсоры и партнеры фестиваля «Открытый взгляд»</h2>
 <div>
   <a href="https://vk.com/lily_studio" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="img/lily_logo.jpg"></a>
-  <a href="http://dutyfreeflowers.ru/" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="img/dff_logo.png"></a>
-  <a href="http://teatrvo.ru/" rel="nofollow" target="blank"><img src="img/tnv_logo.jpg"></a>
+  <a href="https://dutyfreeflowers.ru/" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="img/dff_logo.png"></a>
+  <a href="https://teatrvo.ru/" rel="nofollow" target="blank"><img src="img/tnv_logo.jpg"></a>
 </div> -->
 
 <div id="content">

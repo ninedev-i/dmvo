@@ -30,7 +30,7 @@
       </div>
       <footer>
          <div class="changesize"><button id="changewordsize" class="smallbutton">Версия для слабовидящих</button><button id="changewordsize1" class="smallbutton">Обычная версия</button></div>
-         <address itemscope itemtype="http://schema.org/Organization">СПб ГБУ «Дом молодёжи Василеостровского района Санкт-Петербурга», <span itemprop="streetAddress">Большой просп. В.О., 65, лит. А</span>, тел. <span itemprop="telephone">321-47-49</span>, <a href="mailto:dmvo@bk.ru" itemprop="email">dmvo@bk.ru</a></address>
+         <address itemscope itemtype="https://schema.org/Organization">СПб ГБУ «Дом молодёжи Василеостровского района Санкт-Петербурга», <span itemprop="streetAddress">Большой просп. В.О., 65, лит. А</span>, тел. <span itemprop="telephone">321-47-49</span>, <a href="mailto:dmvo@bk.ru" itemprop="email">dmvo@bk.ru</a></address>
       </footer>
    </body>
    <script src="{{URL::to('/')}}/public/js/js.cookie.js"></script>

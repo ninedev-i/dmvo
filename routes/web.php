@@ -26,6 +26,7 @@
 
    Route::get('/studio', 'Studios@renderStudioPage')->name('studio');
       Route::get('/studio/direction={studioDirection}&price={studioPrice}&age={studioAge}', 'Studios@searchStudioPage')->name('studio');
+      Route::get('/studio/requests', 'Studios@requestsList')->name('studio');
       Route::get('/studio/{shortname}', 'Studios@renderCurrentStudioPage')->name('studio');
 
    Route::get('/service', 'Service@renderServicePage')->name('service');

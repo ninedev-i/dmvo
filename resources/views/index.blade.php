@@ -69,20 +69,17 @@
    </ul>
 @endif
 
-<a href="http://журнал.доммолодежи.рф/" target="_blank">
+<a href="https://журнал.доммолодежи.рф/" target="_blank">
    <h2 class="mainpagetitle">Молодёжный онлайн-журнал В@ська</h2>
-   <img src="http://журнал.доммолодежи.рф/img/logo.png" height="80" alt="Молодёжный онлайн-журнал В@ська" title="Молодёжный онлайн-журнал В@ська">
+   <img src="https://журнал.доммолодежи.рф/img/logo.png" height="80" alt="Молодёжный онлайн-журнал В@ська" title="Молодёжный онлайн-журнал В@ська">
 </a>
 
 <h2 class="mainpagetitle">Важные ссылки</h2>
 <div>
-  <a href="http://voadm.spb.ru/" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/admvo.jpg')}}"></a>
-  <a href="http://gov.spb.ru/gov/otrasl/kpmp/" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/commol.jpg')}}"></a>
+  <a href="https://voadm.spb.ru/" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/admvo.jpg')}}"></a>
+  <a href="https://gov.spb.ru/gov/otrasl/kpmp/" style="margin-right: 25px;" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/commol.jpg')}}"></a>
   <a href="https://tvoybudget.spb.ru/ " rel="nofollow" target="blank"><img src="{{URL::to('/public/img/budget.jpg')}}"></a>
-  <!-- <a href="http://spbtolerance.ru/" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/tolerance.jpg')}}"></a> -->
-  <a href="http://www.zakon.gov.spb.ru/hot_line" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/corrupt.jpg')}}"></a>
-  <!-- <a href="about.php?page=gosuslugi" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/gosuslugi.png')}}"></a> -->
-  <!-- <a href="http://www.xn--c1adbjbwilr5m.xn--p1ai/" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/heroname.jpg')}}"></a> -->
+  <a href="https://www.zakon.gov.spb.ru/hot_line" rel="nofollow" target="blank"><img src="{{URL::to('/public/img/corrupt.jpg')}}"></a>
 </div>
 
 @if($countCityEvents > 0)

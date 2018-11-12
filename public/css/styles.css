@@ -155,7 +155,8 @@ form.searchform select {height: 37px; color: #7b8b8e; border: 1px solid #006699;
 .photostudio {margin: 6px auto;}
 .photostudio a {text-decoration: none;}
 .photo7, .photo8, .photo9, .photo10 {display: none;}
-.bytheway {width: 200px; color: black; background: #B4DCED; float: right; margin-left: 10px; margin-bottom: 5px; padding: 10px; font-size: 0.85em;}
+.bytheway {width: 210px; color: black; float: right; margin-left: 10px; margin-bottom: 5px; font-size: 0.85em;}
+.bytheway .info {background: #B4DCED; padding: 10px;}
 .bytheway  br {line-height: 2px;}
 .bytheway .site_link {font-size: 14px; text-decoration: underline; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 li.ournews a {padding: 5px; background-color: #B4DCED;}

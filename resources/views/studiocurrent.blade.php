@@ -11,23 +11,31 @@
 
 {!! $adminlink !!}
 <div class="bytheway">
-    <b>Возраст:</b> от {{ $studio->age_min }} до {{ $studio->age_max }} лет<br />
-    @if ( $studio->price )
-      <b>Стоимость:</b> {!! $studio->price !!}<br />
-    @endif
-    @if ( $studio->room )
-      <b>Кабинет:</b> {{ $studio->room}}<br />
-    @endif
-    <b>Руководитель:</b><br />
+   <div class="info">
+      <b>Возраст:</b> от {{ $studio->age_min }} до {{ $studio->age_max }} лет<br />
+      @if ( $studio->price )
+        <b>Стоимость:</b> {!! $studio->price !!}<br />
+      @endif
+      @if ( $studio->room )
+        <b>Кабинет:</b> {{ $studio->room}}<br />
+      @endif
+      <b>Руководитель:</b><br />
 
-    <?php $studio_teachers = explode(', ', $studio->teacher);?>
-    {!! $teachers !!}
-    @if ( $studio->phone )
-      {!! $studio->phone !!}<br />
-    @endif
-    @if ( $studio->link && !$isWideScreen )
-      <div class="site_link"><a href="{{$studio->link}}" title="{{$studio->link}}" target="_blank" class="site_link">{{ $studio->link }}</a></div>
-    @endif
+      <?php $studio_teachers = explode(', ', $studio->teacher);?>
+      {!! $teachers !!}
+      @if ( $studio->phone )
+        {!! $studio->phone !!}<br />
+      @endif
+      @if ( $studio->link && !$isWideScreen )
+        <div class="site_link"><a href="{{$studio->link}}" title="{{$studio->link}}" target="_blank" class="site_link">{{ $studio->link }}</a></div>
+      @endif
+   </div>
+   @if ($studio->show_requests === 'true')
+   <div id="app">
+     <Studio_request></Studio_request>
+   </div>
+   @endif
+
 </div>
   {!! $studio->content !!}
   @if ( $studio->timetable )
@@ -67,4 +75,5 @@
     <div class="clear"></div>
   </div>
 
+<script src="{{URL::to('/')}}/public/js/app.js"></script>
 @endsection

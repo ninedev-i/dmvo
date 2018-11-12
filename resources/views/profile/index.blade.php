@@ -55,7 +55,7 @@
    @foreach($timetable as $deal1)
    <div style="display: none;" id="hidden-content-id-{{ $deal1->id }}">
 
-      {!! Form::open(['url' => 'http://доммолодежи.рф/profile/timetableupdate', 'style' => 'width: 900px;' ]) !!}
+      {!! Form::open(['url' => 'https://доммолодежи.рф/profile/timetableupdate', 'style' => 'width: 900px;' ]) !!}
       {!! Form::hidden('timetable_id', $deal1->id, ['style' => 'display: inline-block; height: 19px;']) !!}
       <table class="admintable">
          <tr><td>{!! Form::label('timetable_date', 'Дата:') !!}</td><td>{!! Form::date('timetable_date', $deal1->which_date, ['style' => 'display: inline-block; height: 19px;']) !!} {!! Form::label('timetable_time', 'Длительность (часов): ', ['style' => 'display: inline-block;']) !!} {!! Form::number('timetable_time', $deal1->how_much_time, ['style' => 'display: inline-block; height: 19px;', 'step' => '0.01']) !!}</td></tr>

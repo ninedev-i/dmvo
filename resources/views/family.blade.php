@@ -13,16 +13,17 @@
 @section('content')
    {!! $adminlink !!}
    <div class="bytheway">
-   <b>Возраст:</b> от 1 до 12 лет<br>
-   <b>Стоимость:</b> бесплатно<br>
-   <b>Руководитель:</b><br>
-   <a href="about/people/39"><img src="http://доммолодежи.рф/public/img/users/ar.stepanova.jpg" style="width: 100%;">
-   Степанова Анжелика Разимовна</a><br>
-   <b>Телефон:</b> 323-58-75<br>
-   @if (!$isWideScreen )
-      <a href="https://vk.com/familclub_dmvo" target="_blank">Группа вконтакте</a>
-   @endif
-
+      <div class="info">
+         <b>Возраст:</b> от 1 до 12 лет<br>
+         <b>Стоимость:</b> бесплатно<br>
+         <b>Руководитель:</b><br>
+         <a href="about/people/39"><img src="https://доммолодежи.рф/public/img/users/ar.stepanova.jpg" style="width: 100%;">
+         Степанова Анжелика Разимовна</a><br>
+         <b>Телефон:</b> 323-58-75<br>
+         @if (!$isWideScreen )
+            <a href="https://vk.com/familclub_dmvo" target="_blank">Группа вконтакте</a>
+         @endif
+      </div>
    </div>
 
    {!! $page->content !!}

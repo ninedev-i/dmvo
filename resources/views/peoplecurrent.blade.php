@@ -19,7 +19,7 @@
 
    @if($control == true)
    <h3>Расписание</h3>
-   <a href="http://доммолодежи.рф/downloadExcel/xls/{{$people->id}}" class="smallbutton" style="float: left;">Выгрузить в Excel</a>
+   <a href="https://доммолодежи.рф/downloadExcel/xls/{{$people->id}}" class="smallbutton" style="float: left;">Выгрузить в Excel</a>
 
    <table class="profileTimetable">
       <tr>

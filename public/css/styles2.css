@@ -34,11 +34,11 @@ a.smallbutton {text-decoration: none;}
 }
 nav {
    width: 270px;
-   background-color: #6EC471;
+   background-color: #516D81;
    position: relative;
 }
 nav li {
-   border-bottom: 1px solid #64AF66;
+   border-bottom: 1px solid #edeff0;
    list-style: none;
    width: 100%;
 }

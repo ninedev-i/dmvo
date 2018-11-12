@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Event;
 use App\Studio;
+use App\StudioRequests;
 use App\User;
 use Auth;
 use URL;
@@ -20,12 +21,18 @@ class Studios extends Controller {
       $title = 'Студии и секции дома молодежи Василеостровского района';
 
       if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+         $countRequests = StudioRequests::where('state', '0')
+            ->count();
+         $countRequestsText = $countRequests > 0 ? ' (+'.$countRequests.')' : false;
+
          $adminlink = '<i class="adminpanel">
                           <a href="admin/addstudio">Добавить новую студию</a>
                           <a href="admin/editstudio" style="margin-left: 10px;">Список всех студий</a>
+                          <a href="studio/requests" style="margin-left: 10px; '.($countRequestsText ? 'color: red' : '').'">Заявки в студии'.$countRequestsText.'</a>
                        </i>';
-      } else {$adminlink = '';}
-
+      } else {
+         $adminlink = '';
+      }
 
       $patriotstudios = Studio::where('show_or_not', '=', '0')
          ->where('direction', 'LIKE', '%patriot%')
@@ -156,6 +163,28 @@ class Studios extends Controller {
          ->with('studioAge', $studioAge)
          ->with('studioDirection', $studioDirection)
          ->with('studios', $studios);
+   }
+
+   public function sendRequestToStudio(Request $request) {
+      StudioRequests::insert(array(
+         'studio' => $request['studio'],
+         'name' => $request['name'],
+         'birthday' => $request['birthday'],
+         'phone' => $request['phone']
+      ));
+   }
+
+   public function requestsList() {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+         $title = 'Список заявок в студии';
+         $allRequests = StudioRequests::get();
+         return View::make('admin/requests_list')
+            ->with('title', $title)
+            ->with('allRequests', $allRequests);
+      } else {
+         return 'Нет доступа';
+      }
+
    }
 
 }

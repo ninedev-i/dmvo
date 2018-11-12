@@ -16,6 +16,7 @@ require('./bootstrap');
 Vue.component('Attachments', require('./components/Attachments.vue'));
 Vue.component('Edit_attachments', require('./components/Edit_attachments.vue'));
 Vue.component('Edit_attachments_list', require('./components/Edit_attachments_list.vue'));
+Vue.component('Studio_request', require('./components/Studio_request.vue'));
 
 const app = new Vue({
     el: '#app'
