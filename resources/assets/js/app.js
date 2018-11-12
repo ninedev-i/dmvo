@@ -13,6 +13,8 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('qwerty', require('./components/qwerty.vue'));
+Vue.component('Aside_card', require('./components/Aside_card.vue'));
 Vue.component('Attachments', require('./components/Attachments.vue'));
 Vue.component('Edit_attachments', require('./components/Edit_attachments.vue'));
 Vue.component('Edit_attachments_list', require('./components/Edit_attachments_list.vue'));

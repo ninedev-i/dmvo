@@ -50,10 +50,12 @@ class GlobalComposer {
       }
 
       $isWideScreen = strpos($_SERVER['HTTP_HOST'], 'xn--h1adbpp') === 0 ? true : false;
+      $isNew = strpos($_SERVER['HTTP_HOST'], 'xn--b1aoke0e') === 0 ? true : false;
 
       $view->with('menu', $menu);
       $view->with('menuWide', $menuWide);
       $view->with('isWideScreen', $isWideScreen);
+      $view->with('isNew', $isNew);
       $view->with('menuWithIcons', $menuWithIcons);
    }
 
