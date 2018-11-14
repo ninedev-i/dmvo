@@ -109,15 +109,17 @@ class Studios extends Controller {
       $photos = $files->allFiles('/studio/'.$shortname);
 
       $teachers = '';
-      $studio_teachers = explode(', ', $studio->teacher);
-      foreach($studio_teachers as $teacher_id) {
-         $people = User::where('id', $teacher_id)
-         ->first();
-         $teacher_photo = '';
-         if(file_exists(public_path('img/users/'.$people->username.'.jpg'))) {
-            $teacher_photo = '<img src="'.URL::to('/').'/public/img/users/'.$people->username.'.jpg" style="width: 100%;">';
+      if (isset($studio->teacher)) {
+         $studio_teachers = explode(', ', $studio->teacher);
+         foreach($studio_teachers as $teacher_id) {
+            $people = User::where('id', $teacher_id)
+            ->first();
+            $teacher_photo = '';
+            if(file_exists(public_path('img/users/'.$people->username.'.jpg'))) {
+               $teacher_photo = '<img src="'.URL::to('/').'/public/img/users/'.$people->username.'.jpg" style="width: 100%;">';
+            }
+            $teachers .= '<a href="'.URL::to('/').'/about/people/'.$people->id.'">'.$teacher_photo.$people->name.'</a><br />';
          }
-         $teachers .= '<a href="'.URL::to('/').'/about/people/'.$people->id.'">'.$teacher_photo.$people->name.'</a><br />';
       }
 
       return View::make('studiocurrent')

@@ -14,7 +14,16 @@
 @endsection
 
 @section('content')
-  {!! $adminlink !!}
+   {!! $adminlink !!}
+
+   @if(isset($video) && $video && $isWideScreen)
+      <video width="620" height="360" controls="controls" poster="{{$videoPoster}}" src="{{URL::to('/')}}/public/video/{{$video}}"></video><br />
+   @endif
+
+   @if(isset($youtube) && $youtube && !$isWideScreen)
+      <iframe class='youtube-player' src='https://www.youtube.com/embed/{{$youtube}}?rel=0&amp&modestbranding=1' frameborder='0' allowfullscreen></iframe><br />
+   @endif
+
   {!! $page->content !!}
 
   <div style="display: none;" id="hidden-content">

@@ -39,10 +39,12 @@
    }
    ?>
    <div id="app">
-      <Attachments
-         data="{{$attachments}}"
-         eventId="{{$event->id}}">
-      </Attachments>
+      @if(!$isWideScreen)
+         <Attachments
+            data="{{$attachments}}"
+            eventId="{{$event->id}}">
+         </Attachments>
+      @endif
    </div>
    <div class="photo_news">
       @if($photos != '[]')

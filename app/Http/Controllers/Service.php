@@ -38,7 +38,14 @@ class Service extends Controller {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/8">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
+      $youtube = "NgHOSWDkZxc";
+      $video = "columnhall.mp4";
+      $videoPoster = "https://i.ytimg.com/vi_webp/NgHOSWDkZxc/sddefault.webp";
+
       return View::make('service')
+         ->with('youtube', $youtube)
+         ->with('video', $video)
+         ->with('videoPoster', $videoPoster)
          ->with('adminlink', $adminlink)
          ->with('page', $page);
    }
@@ -53,7 +60,14 @@ class Service extends Controller {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/9">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
+      $youtube = "hVYMhSeTbPc";
+      $video = "bluehall.mp4";
+      $videoPoster = "https://i.ytimg.com/vi_webp/hVYMhSeTbPc/sddefault.webp";
+
       return View::make('service')
+         ->with('youtube', $youtube)
+         ->with('video', $video)
+         ->with('videoPoster', $videoPoster)
          ->with('adminlink', $adminlink)
          ->with('page', $page);
    }
@@ -68,7 +82,14 @@ class Service extends Controller {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/10">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
+      $youtube = "fdUSuqtskxs";
+      $video = "transeforce.mp4";
+      $videoPoster = "https://i.ytimg.com/vi_webp/fdUSuqtskxs/sddefault.webp";
+
       return View::make('service')
+         ->with('youtube', $youtube)
+         ->with('video', $video)
+         ->with('videoPoster', $videoPoster)
          ->with('adminlink', $adminlink)
          ->with('page', $page);
    }
