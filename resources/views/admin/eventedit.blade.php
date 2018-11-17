@@ -77,7 +77,7 @@
           </td>
        </tr>
     </table>
-
+    
     @if($content->show_or_not == 0)
              {!! Form::submit('Изменить мероприятие') !!}
              <a href="{{URL::to('/admin/deleteevent/') .'/'. $content->id}}" class="smallbutton redbutton">Удалить мероприятие</a>

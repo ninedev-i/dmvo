@@ -43,7 +43,7 @@
                alert('Не все поля заполнены')
                return;
             }
-             formData.append('event_id', this.eventId);
+            formData.append('event_id', this.eventId);
             formData.append('type', type);
             formData.append('path', path);
             formData.append('title', title);

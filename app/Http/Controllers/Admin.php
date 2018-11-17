@@ -26,7 +26,7 @@ class Admin extends Controller {
     }
 
     public function index() {
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
       $title = 'Админка';
 
       return View::make('admin/index')
@@ -191,9 +191,11 @@ class Admin extends Controller {
       $studiolist = Studio::where('show_or_not', '=', '0')
          ->orderBy('studio_name', 'asc')
          ->get();
+      $lastId = Event::all()->last()->id;
 
       return View::make('admin/eventadd')
-         ->with('studiolist', $studiolist)
+      ->with('studiolist', $studiolist)
+         ->with('futureId', ($lastId + 1))
          ->with('title', $title);
     }
 

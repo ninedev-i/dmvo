@@ -6,6 +6,7 @@
    <script>$(document).ready(function() {$('.menu-button').click(function() {$('nav').slideToggle();}); });</script>
    <link rel="stylesheet" href="{{URL::to('/')}}/public/js/chosen/chosen.css">
    <script src="{{URL::to('/')}}/public/js/chosen/chosen.jquery.js"></script>
+   <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
 @section('content')
@@ -30,14 +31,33 @@
       </select>
       <script>$('.chosen-select').chosen({ search_contains: true });</script>
    </td></tr>
-   <tr><td>Афиша</td><td>
-      <input name="uploadFile" type="file" />
-      <select name="right_column">
-         <option value ="0">Не показывать на главной</option>
-         <option value ="1">Показывать на главной</option>
-      </select>
-      <span style="margin-left: 15px;">Фото с мероприятия</span> <input name="upload_photos[]" type="file" multiple="true" /></td></tr>
-  </table>
+   <tr>
+     <td>Вложения</td>
+     <td>
+        <div id="app">
+           <edit-attachments data="" eventId="{{$futureId}}"></edit-attachments>
+        </div>
+     </td>
+   </tr>
+   <tr>
+      <td>Афиша</td>
+      <td>
+        <input name="uploadFile" type="file" />
+        <select name="right_column">
+           <option value ="0" selected>Не показывать на главной</option>
+           <option value ="1">Показывать на главной</option>
+        </select>
+      </td>
+   </tr>
+   <tr>
+      <td>Фотографии</td>
+      <td>
+        <div class="editPhotos">
+           <input name="upload_photos[]" type="file" multiple="true" />
+        </div>
+      </td>
+   </tr>
+   </table>
 
   {!! Form::submit('Добавить новость') !!}
   {!! Form::close() !!}
@@ -48,5 +68,6 @@
    new ContentEditor(1, true);
    new ContentEditor(2, true);
 </script>
+<script src="{{URL::to('/')}}/public/js/app.js"></script>
 
 @endsection

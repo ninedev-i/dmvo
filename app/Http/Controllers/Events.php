@@ -31,10 +31,10 @@ class Events extends Controller {
       $exhibitions = Event::where('show_or_not', '=', '0')
          ->where('date_to', '>=', date('Y-m-d'))
          ->where('tags', 'LIKE', '%exhibition%')
-         ->orderBy('date_from', 'desc')
+         ->orderBy('date_from', 'asc')
          ->get();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/addevent">Добавить новое мероприятие</a></i>';
       } else {$adminlink = '';}
 
@@ -59,7 +59,7 @@ class Events extends Controller {
          ->distinct()
          ->get();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/addevent">Добавить новое мероприятие</a></i>';
       } else {$adminlink = '';}
 
@@ -81,7 +81,7 @@ class Events extends Controller {
 
       $exhibitions = [];
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/addevent">Добавить новое мероприятие</a></i>';
       } else {$adminlink = '';}
 
@@ -105,7 +105,7 @@ class Events extends Controller {
 
       $searchValue = $eventTitle;
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
       $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/addevent">Добавить новое мероприятие</a></i>';
       } else {$adminlink = '';}
 
@@ -119,7 +119,7 @@ class Events extends Controller {
    // Отдельно взятое мероприятие
    public function renderCurrentEventPage($id) {
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editevent/'.$id.'">Редактировать мероприятие</a> <a href="'.URL::to('/').'/admin/addevent" style="margin-left: 10px;">Добавить мероприятие</a></i>';
       } else {$adminlink = '';}
 

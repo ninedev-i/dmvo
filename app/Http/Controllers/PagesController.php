@@ -21,7 +21,7 @@ class PagesController extends Controller  {
       ->where('id', '18')
       ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/18">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -37,7 +37,7 @@ class PagesController extends Controller  {
          ->where('id', '19')
          ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/19">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -53,7 +53,7 @@ class PagesController extends Controller  {
          ->where('id', '22')
          ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/22">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -73,7 +73,7 @@ class PagesController extends Controller  {
          ->get();
       $currentLink = 'team';
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/2">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -105,7 +105,7 @@ class PagesController extends Controller  {
                $control = true;
             }
 
-            if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+            if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
                $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpeople/'.$id.'">Редактировать педагога</a></i>';
             } else {$adminlink = '';}
 
@@ -194,7 +194,7 @@ class PagesController extends Controller  {
          ->where('id', '23')
          ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/23">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -210,7 +210,7 @@ class PagesController extends Controller  {
          ->where('id', '20')
          ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/20">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -226,7 +226,7 @@ class PagesController extends Controller  {
          ->where('id', '21')
          ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/21">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -242,7 +242,7 @@ class PagesController extends Controller  {
          ->where('id', '13')
          ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/13">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -258,7 +258,7 @@ class PagesController extends Controller  {
       $list = Media::orderBy('date', 'desc')
          ->get();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/addmassmedia">Добавить новость СМИ</a></i>';
       } else {$adminlink = '';}
 
@@ -273,7 +273,7 @@ class PagesController extends Controller  {
                ->where('show_or_not', 'true')
                ->first();
 
-            if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+            if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
                $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editmassmedia/'.$id.'">Редактировать новость СМИ</a> <a href="'.URL::to('/').'/about/massmedia/" style="margin-left: 10px;">Список новостей СМИ</a></i>';
             } else {$adminlink = '';}
 
@@ -288,7 +288,7 @@ class PagesController extends Controller  {
          ->where('id', '6')
          ->first();
 
-      $adminlink = (Auth::check() && in_array(Auth::user()->id, [1, 65]) ? '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/6">Редактировать страницу</a></i>' : '');
+      $adminlink = (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90]) ? '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/6">Редактировать страницу</a></i>' : '');
 
       return View::make('contact')
          ->with('adminlink', $adminlink)

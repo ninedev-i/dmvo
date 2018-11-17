@@ -45,7 +45,7 @@ class GlobalComposer {
       }
 
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $menu = array_merge( [ 'Админка' => 'admin' ], $menu );
       }
 

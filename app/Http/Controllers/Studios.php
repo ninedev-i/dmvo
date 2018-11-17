@@ -20,7 +20,7 @@ class Studios extends Controller {
    public function renderStudioPage() {
       $title = 'Студии и секции дома молодежи Василеостровского района';
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $countRequests = StudioRequests::where('state', '0')
             ->count();
          $countRequestsText = $countRequests > 0 ? ' (+'.$countRequests.')' : false;
@@ -91,7 +91,7 @@ class Studios extends Controller {
    }
 
    public function renderCurrentStudioPage($shortname) {
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editstudio/'.$shortname.'">Редактировать студию</a></i>';
       } else {$adminlink = '';}
 
@@ -177,7 +177,7 @@ class Studios extends Controller {
    }
 
    public function requestsList() {
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $title = 'Список заявок в студии';
          $allRequests = StudioRequests::where('state', '0')
             ->get();

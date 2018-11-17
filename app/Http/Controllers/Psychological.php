@@ -31,7 +31,7 @@ class Psychological extends Controller {
          ->orderBy('date_from', 'asc')
          ->get();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/11">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -48,7 +48,7 @@ class Psychological extends Controller {
          ->where('id', '14')
          ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/14">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -63,7 +63,7 @@ class Psychological extends Controller {
          ->where('id', '15')
          ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/15">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -78,7 +78,7 @@ class Psychological extends Controller {
          ->where('id', '16')
          ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/16">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
@@ -93,7 +93,7 @@ class Psychological extends Controller {
          ->where('id', '17')
          ->first();
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
          $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/17">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 

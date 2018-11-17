@@ -25,7 +25,7 @@ class Family extends Controller {
          ->orderBy('date_to', 'desc')
          ->paginate(10);
 
-      if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
       $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/25">Редактировать страницу</a></i>';
       } else {$adminlink = '';}
 
