@@ -179,14 +179,22 @@ class Studios extends Controller {
    public function requestsList() {
       if (Auth::check() && in_array(Auth::user()->id, [1, 65])) {
          $title = 'Список заявок в студии';
-         $allRequests = StudioRequests::get();
+         $allRequests = StudioRequests::where('state', '0')
+            ->get();
+         $finishedRequests = StudioRequests::where('state', '1')
+            ->get();
          return View::make('admin/requests_list')
             ->with('title', $title)
-            ->with('allRequests', $allRequests);
+            ->with('allRequests', $allRequests)
+            ->with('finishedRequests', $finishedRequests);
       } else {
          return 'Нет доступа';
       }
+   }
 
+   public function finishRequestToStudio(Request $request) {
+      StudioRequests::where('id', $request['id'])
+         ->update(['state' => 1]);
    }
 
 }

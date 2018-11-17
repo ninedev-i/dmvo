@@ -3,6 +3,7 @@
 @section('scripts')
    <script src="{{URL::to('/')}}/public/js/fancyBox-3.0/dist/jquery.fancybox.js"></script>
    <link rel="stylesheet" href="{{URL::to('/')}}/public/js/fancyBox-3.0/dist/jquery.fancybox.css" />
+   <meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
 @section('title', $studio->studio_name)
@@ -32,7 +33,7 @@
    </div>
    @if ($studio->show_requests === 'true')
    <div id="app">
-     <Studio_request></Studio_request>
+     <studio-request></studio-request>
    </div>
    @endif
 

@@ -95,6 +95,7 @@ class Admin extends Controller {
                       'link' => $input['link'],
                       'content' => $input['content'],
                       'achievements' => $input['achievements'],
+                      'show_requests' => $input['show_requests'],
                       'teacher' => $allteachers,
                       'direction' => $alldirections
                     ]);
@@ -153,6 +154,7 @@ class Admin extends Controller {
                      'link' => $input['link'],
                      'content' => $input['content'],
                      'achievements' => $input['achievements'],
+                     'show_requests' => $input['show_requests'],
                      'show_or_not' => 0,
                      'direction' => $alldirections
                    ));

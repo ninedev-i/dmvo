@@ -40,10 +40,7 @@
    ?>
    <div id="app">
       @if(!$isWideScreen)
-         <Attachments
-            data="{{$attachments}}"
-            eventId="{{$event->id}}">
-         </Attachments>
+         <attachments data="{{$attachments}}" eventId="{{$event->id}}"></attachments>
       @endif
    </div>
    <div class="photo_news">

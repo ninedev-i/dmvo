@@ -47,10 +47,7 @@
           <td>Вложения</td>
           <td>
              <div id="app">
-                <Edit_attachments
-                   data="{{$attachments}}"
-                   eventId="{{$content->id}}">
-                </Edit_attachments>
+                <edit-attachments data="{{$attachments}}" eventId="{{$content->id}}"></edit-attachments>
              </div>
           </td>
        </tr>

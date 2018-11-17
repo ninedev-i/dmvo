@@ -6,7 +6,7 @@
 
       <div style="display: none;" id="hiddenForm">
          <div class="requestTitle">Запись в студию</div>
-         <form class="requestForm" method="post" v-show="displayForm">
+         <form class="requestForm" method="POST" v-show="displayForm">
             <div class="requestLine">
                <label for="name">Имя и фамилия</label>
                <input type="text" id="name" value="">
@@ -45,8 +45,9 @@
             formData.append('birthday', birthday);
             formData.append('phone', phone);
             formData.append('studio', studio);
+
             axios.post(
-               window.location.origin + '/api/sendRequestToStudio', formData
+               window.location.origin + '/api/send_request_to_studio', formData
             ).then((response) => {
                this.displayForm = false;
                document.querySelector('.requestTitle').innerText = 'Ваша заявка отправлена';

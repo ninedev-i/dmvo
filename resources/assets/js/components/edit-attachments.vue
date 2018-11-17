@@ -1,10 +1,6 @@
 <template>
    <div class="blockWithBorder">
-      <Edit_attachments_list
-         ref="attachments_list"
-         :eventId="eventId"
-         >
-      </Edit_attachments_list>
+      <edit-attachments-list ref="attachments_list" :eventId="eventId"></edit-attachments-list>
       <form class="attachment_form form_add" name="attachment_form" action="index.html" method="post">
          <select class="attachment_selector attachment_selectorType" name="type" v-model="selector">
             <option value="link">Ссылка</option>

@@ -13,10 +13,11 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('Attachments', require('./components/Attachments.vue'));
-Vue.component('Edit_attachments', require('./components/Edit_attachments.vue'));
-Vue.component('Edit_attachments_list', require('./components/Edit_attachments_list.vue'));
-Vue.component('Studio_request', require('./components/Studio_request.vue'));
+Vue.component('attachments', require('./components/attachments.vue'));
+Vue.component('edit-attachments', require('./components/edit-attachments.vue'));
+Vue.component('edit-attachments-list', require('./components/edit-attachments-list.vue'));
+Vue.component('studio-request', require('./components/studio-request.vue'));
+Vue.component('studio-request-finish-button', require('./components/studio-request-finish-button.vue'));
 
 const app = new Vue({
     el: '#app'

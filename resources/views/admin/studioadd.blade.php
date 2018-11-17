@@ -47,6 +47,13 @@
       <tr><td>Расписание<br /><input type="radio" id="showtext1" name="whattoshow1" checked><label for="showtext1">текст</label><input type="radio" name="whattoshow1" id="showhtml1"><label for="showhtml1">html</label></td><td><div class="mycontent1" contenteditable></div>{!! Form::textarea('timetable', '', ['class' => 'hiddenarea1']) !!}</td></tr>
       <tr><td>Описание<br /><input type="radio" id="showtext2" name="whattoshow2" checked><label for="showtext2">текст</label><input type="radio" name="whattoshow2" id="showhtml2"><label for="showhtml2">html</label></td><td><div class="mycontent2" contenteditable></div>{!! Form::textarea('content', '', ['class' => 'hiddenarea2']) !!}</td></tr>
       <tr><td>{!! Form::label('achievements', 'Достижения') !!}</td><td>{!! Form::text('achievements', '', ['style' => 'height: 45px;']) !!}</td></tr>
+      <tr>
+         <td>Набор</td>
+         <td>
+            <input name="show_requests" type="radio" value="true" id="opened" checked><label for="opened">Открыт</label>
+            <input name="show_requests" type="radio" value="false" id="closed"><label for="closed">Закрыт</label>
+         </td>
+      <tr/>
       <tr><td>Фотографии</td><td><input name="upload_photos[]" type="file" multiple="true" /></td></tr>
    </table>
    {!! Form::submit('Добавить студию') !!}

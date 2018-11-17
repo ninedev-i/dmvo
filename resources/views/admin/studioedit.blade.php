@@ -56,6 +56,13 @@
             <option <?php if ($content->show_or_not == 0) {echo "selected";} ?> value ="0">Нет</option>
             <option <?php if ($content->show_or_not == 1) {echo "selected";} ?> value ="1">Удалить</option>
          </select></td></tr>
+      <tr>
+         <td>Набор</td>
+         <td>
+            <input name="show_requests" type="radio" value="true" id="opened" <?php if ($content->show_requests === 'true') {echo "checked";} ?>><label for="opened">Открыт</label>
+            <input name="show_requests" type="radio" value="false" id="closed" <?php if ($content->show_requests === 'false') {echo "checked";} ?>><label for="closed">Закрыт</label>
+         </td>
+      <tr/>
       <tr><td>Фотографии</td><td><input name="upload_photos[]" type="file" multiple="true" /></td></tr>
    </table>
 
