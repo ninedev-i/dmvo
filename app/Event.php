@@ -8,6 +8,15 @@ use Intervention\Image\Facades\Image;
 
 class Event extends Model {
 
+   // Добавим новое поле
+   protected $attributes = ['pictures'];
+   // Добавим в ответ json
+   protected $appends = ['pictures'];
+   public function getPicturesAttribute() {
+      $files = Storage::disk('images')->files('/events/id'.$this->id);
+      return $files;
+   }
+
    // Миниатюра мероприятия
    public function photoPreview() {
       $files = Storage::disk('images')->files('/events/id'.$this->id);
