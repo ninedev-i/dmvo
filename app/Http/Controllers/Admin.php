@@ -111,7 +111,7 @@ class Admin extends Controller {
       }
 
       if ($input['show_or_not'] == 1) {
-         return redirect('http://доммолодежи.рф/studio');
+         return redirect('https://доммолодежи.рф/studio');
       } else {
          return redirect()->route('studio', ['shortname' => $shortname]);
       }
@@ -302,7 +302,7 @@ class Admin extends Controller {
          ->where('id', $id)
          ->update(['show_or_not' => 1]);
 
-       return redirect('http://доммолодежи.рф/events');
+       return redirect('https://доммолодежи.рф/events');
     }
 
      // Редактировать страницы – список

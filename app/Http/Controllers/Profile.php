@@ -65,7 +65,7 @@ class Profile extends Controller {
          Image::make($photo)->resize(1280, null, function ($constraint) { $constraint->aspectRatio(); })->save(public_path().'/img/users/'.$username.'.jpg', 70);
       }
 
-     return redirect('http://доммолодежи.рф/profile');
+     return redirect('https://доммолодежи.рф/profile');
    }
 
    public function postTimetable(Request $request) {
@@ -85,7 +85,7 @@ class Profile extends Controller {
          'comment' => $input['timetable_comment']
       ]);
 
-      return redirect('http://доммолодежи.рф/profile');
+      return redirect('https://доммолодежи.рф/profile');
    }
 
    public function updateTimetable(Request $request) {
@@ -107,7 +107,7 @@ class Profile extends Controller {
             ->delete();
       }
 
-      return redirect('http://доммолодежи.рф/profile');
+      return redirect('https://доммолодежи.рф/profile');
    }
 
    public function downloadExcel($type) {

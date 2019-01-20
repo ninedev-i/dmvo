@@ -16,7 +16,7 @@ class ApiEvents extends Controller {
       $output['carousel'] = ApiEvents::get_carousel();
       $output['events'] = ApiEvents::get_closest_events(5);
       $output['exhibitions'] = ApiEvents::get_closest_exhibitions();
-      $output['news'] = ApiEvents::get_news();
+      $output['news'] = ApiEvents::get_news(0);
 
       return $output;
    }
@@ -77,11 +77,11 @@ class ApiEvents extends Controller {
    }
 
    // Список пост-релизов конкурсов и выставок
-   public function get_news() {
+   public function get_news($offset) {
       $events = Event::where('post_reliz', '!=', '')
          ->where('show_or_not', '0')
          ->orderBy('date_to', 'desc')
-         ->skip(0)
+         ->skip($offset * 12)
          ->take(12)
          ->get(['id', 'title', 'date_from', 'date_to', 'what_time', 'post_reliz']);
 

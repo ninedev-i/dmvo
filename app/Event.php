@@ -9,12 +9,20 @@ use Intervention\Image\Facades\Image;
 class Event extends Model {
 
    // Добавим новое поле
-   protected $attributes = ['pictures'];
+   protected $attributes = ['pictures', 'cover'];
    // Добавим в ответ json
-   protected $appends = ['pictures'];
+   protected $appends = ['pictures', 'cover'];
    public function getPicturesAttribute() {
       $files = Storage::disk('images')->files('/events/id'.$this->id);
       return $files;
+   }
+   public function getCoverAttribute() {
+      $cover = '';
+      $is_exist = Storage::disk('images')->exists('events/covers/event_id'.$this->id.'.jpg');
+      if ($is_exist) {
+         $cover = 'events/covers/event_id'.$this->id.'.jpg';
+      }
+      return $cover;
    }
 
    // Миниатюра мероприятия

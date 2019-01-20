@@ -2,7 +2,6 @@
 
 @section('title', $title)
 @section('scripts')
-   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
    <script>$(document).ready(function() {$('.menu-button').click(function() {$('nav').slideToggle();}); });</script>
    <link rel="stylesheet" href="{{URL::to('/')}}/public/js/chosen/chosen.css">
    <script src="{{URL::to('/')}}/public/js/chosen/chosen.jquery.js"></script>
@@ -77,7 +76,7 @@
           </td>
        </tr>
     </table>
-    
+
     @if($content->show_or_not == 0)
              {!! Form::submit('Изменить мероприятие') !!}
              <a href="{{URL::to('/admin/deleteevent/') .'/'. $content->id}}" class="smallbutton redbutton">Удалить мероприятие</a>

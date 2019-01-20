@@ -15,7 +15,10 @@ Route::get('/get_index', 'ApiEvents@get_index');
 Route::get('/get_carousel', 'ApiEvents@get_carousel');
 Route::get('/get_closest_events', 'ApiEvents@get_closest_events');
 Route::get('/get_closest_exhibitions', 'ApiEvents@get_closest_exhibitions');
-Route::get('/get_news', 'ApiEvents@get_news');
+Route::get('/get_news/{offset}', 'ApiEvents@get_news');
 // Мероприятия
 Route::get('/get_event/{id}', 'ApiEvents@get_event');
 Route::get('/get_past_events/{year}', 'ApiEvents@get_past_events');
+// Страницы
+Route::get('/get_page/{id}', 'ApiPages@get_page');
+Route::get('/get_psychological', 'ApiPages@get_psychological_page');
