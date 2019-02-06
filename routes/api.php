@@ -22,3 +22,5 @@ Route::get('/get_past_events/{year}', 'ApiEvents@get_past_events');
 // Страницы
 Route::get('/get_page/{id}', 'ApiPages@get_page');
 Route::get('/get_psychological', 'ApiPages@get_psychological_page');
+Route::get('/get_volunteer', 'ApiPages@get_volunteer_page');
+Route::get('/get_family', 'ApiPages@get_family_page');
