@@ -20,7 +20,7 @@ Route::get('/get_news/{offset}', 'ApiEvents@get_news');
 Route::get('/get_event/{id}', 'ApiEvents@get_event');
 Route::get('/get_past_events/{year}', 'ApiEvents@get_past_events');
 // Студии
-Route::get('/get_studio_page', 'ApiStudio@get_studio_page');
+Route::get('/get_studios_by_directions', 'ApiStudio@get_studios_by_directions');
 // Страницы
 Route::get('/get_page/{id}', 'ApiPages@get_page');
 Route::get('/get_psychological', 'ApiPages@get_psychological_page');
