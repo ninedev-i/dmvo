@@ -27,3 +27,4 @@ Route::get('/get_psychological', 'ApiPages@get_psychological_page');
 Route::get('/get_volunteer', 'ApiPages@get_volunteer_page');
 Route::get('/get_family', 'ApiPages@get_family_page');
 Route::get('/get_service', 'ApiPages@get_service_page');
+Route::get('/get_contacts', 'ApiPages@get_contacts');

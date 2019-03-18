@@ -77,4 +77,15 @@ class ApiPages extends Controller {
 
       return json_encode($PageData);
    }
+
+   // Страница контакты
+   public function get_contacts() {
+      $people = Meta::where('id', 4)->first();
+      $peopleArr = explode(', ', $people['data']);
+
+      $contacts = User::whereIn('id', $peopleArr)
+                     ->orderByRaw('FIELD(id,'.$people['data'].')')
+                     ->get(['id', 'name', 'info', 'username', 'phone', 'position', 'email']);
+      return $contacts;
+   }
 }
