@@ -73,6 +73,13 @@
          </a>
       </div>
 
+      <div class="direction">
+         <a href="about/enviroment">
+            <div class="dirimage" style="background-image: url(public/img/about/11.png); background-position: 50% 60%;"></div>
+            <h3>Доступная среда</h3>
+         </a>
+      </div>
+
    </div>
 {!! $page->content !!}
 @endsection

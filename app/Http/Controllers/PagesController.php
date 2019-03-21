@@ -251,6 +251,20 @@ class PagesController extends Controller  {
          ->with('page', $page);
    }
 
+   // Доступная среда
+   public function enviroment() {
+      $page = DB::table('pages')
+         ->where('id', '27')
+         ->first();
+
+      if (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90])) {
+         $adminlink = '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/27">Редактировать страницу</a></i>';
+      } else {$adminlink = '';}
+
+      return View::make('page')
+         ->with('adminlink', $adminlink)
+         ->with('page', $page);
+   }
 
    // СМИ о нас
    public function massMedia() {
