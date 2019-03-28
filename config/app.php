@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://xn--d1aadekogaqcb.xn--p1ai/'),
+    'url' => env('APP_URL', 'https://xn--d1aadekogaqcb.xn--p1ai/'),
 
     /*
     |--------------------------------------------------------------------------

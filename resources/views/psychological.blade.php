@@ -23,10 +23,10 @@
    @endif
    <h2>Наши специалисты</h2>
    <div class='photo_news' style='display: -webkit-flex; display: flex; -webkit-align-items: top; align-items: top;'>
-      <a href='about/people/85' class='psy'><img src='{{URL::to('/')}}/public/img/users/np.aksenova.jpg' style='height: 110px; float: left; margin: 0px 5px;'><b>Аксёнова Наталья Павловна</b><br />заведующая отделом<br />часы приёма:<br />вт 16:00-18:00, чт 9:00 - 11:00</p></a>
-      <a href='about/people/23' class='psy'><img src='{{URL::to('/')}}/public/img/users/du.kudriavcev.jpg' style='height: 110px; float: left; margin: 0px 5px;'><p><b>Кудрявцев Денис Юрьевич</b><br />психолог<br />консультации:<br />вт, чт – 17:00-20:00</p></a>
-      <a href='about/people/30' class='psy'><img src='{{URL::to('/')}}/public/img/users/nf.novoselova.jpg' style='height: 110px; float: left; margin: 0px 5px;'><p><b>Новосёлова Наталья Фёдоровна</b><br />психолог<br />консультации:<br />пн, ср – 17:00-20:00</p></a>
-      <a href='about/people/92' class='psy'><img src='{{URL::to('/')}}/public/img/users/ma.cheidze.jpg' style='height: 110px; float: left; margin: 0px 5px;'><p><b>Чхеидзе Мариам Автандиловна</b><br />психолог<br />консультации:<br />вт, пт – 14:00-16:00</p></a>
+      <a href='about/people/85' class='psy'><img src='{{URL::to('/')}}/public/img/users/np.aksenova.jpg' style='height: 110px; float: left; margin: 0px 5px;'><b>Аксёнова Наталья Павловна</b><br />заведующая отделом</p></a>
+      <a href='about/people/23' class='psy'><img src='{{URL::to('/')}}/public/img/users/du.kudriavcev.jpg' style='height: 110px; float: left; margin: 0px 5px;'><p><b>Кудрявцев Денис Юрьевич</b><br />психолог</p></a>
+      <a href='about/people/30' class='psy'><img src='{{URL::to('/')}}/public/img/users/nf.novoselova.jpg' style='height: 110px; float: left; margin: 0px 5px;'><p><b>Новосёлова Наталья Фёдоровна</b><br />психолог</p></a>
+      <a href='about/people/92' class='psy'><img src='{{URL::to('/')}}/public/img/users/ma.cheidze.jpg' style='height: 110px; float: left; margin: 0px 5px;'><p><b>Чхеидзе Мариам Автандиловна</b><br />психолог</p></a>
    </div>
    <h2 style='margin-bottom: 15px; margin-top: 10px;'>Направления работы</h2>
    <div style='display: -webkit-flex; display: flex; -webkit-justify-content: space-between; justify-content: space-between; -webkit-align-items: top; align-items: top;'>
