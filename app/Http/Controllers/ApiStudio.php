@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Studio;
+use App\User;
 
 class Direction {
    public $name;
@@ -50,5 +52,22 @@ class ApiStudio extends Controller {
          ->get(['shortname', 'studio_name', 'age_min', 'age_max', 'price', 'direction']);
 
       return $list;
+   }
+
+   // Страница мероприятия
+   public function get_studio($shortname) {
+      $studio = Studio::where('shortname', $shortname)
+         ->where('show_or_not', '=', '0')
+         ->first();
+
+      $teachersArr = explode(', ', $studio['teacher']);
+
+      $studio['teachers'] = User::whereIn('id', $teachersArr)
+                            ->where('show_or_not', 'true')
+                            ->get(['id', 'name', 'username', 'phone']);
+
+      $studio['images'] = Storage::disk('images')->files('/studio/'.$shortname);
+
+      return $studio;
    }
 }

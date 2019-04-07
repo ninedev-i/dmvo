@@ -21,10 +21,12 @@ Route::get('/get_event/{id}', 'ApiEvents@get_event');
 Route::get('/get_past_events/{year}', 'ApiEvents@get_past_events');
 // Студии
 Route::get('/get_studios_by_directions', 'ApiStudio@get_studios_by_directions');
+Route::get('/get_studio/{shortname}', 'ApiStudio@get_studio');
 // Страницы
 Route::get('/get_page/{id}', 'ApiPages@get_page');
 Route::get('/get_psychological', 'ApiPages@get_psychological_page');
 Route::get('/get_volunteer', 'ApiPages@get_volunteer_page');
 Route::get('/get_family', 'ApiPages@get_family_page');
 Route::get('/get_service', 'ApiPages@get_service_page');
+Route::get('/get_transforce', 'ApiPages@get_transforce_page');
 Route::get('/get_contacts', 'ApiPages@get_contacts');

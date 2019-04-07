@@ -78,6 +78,22 @@ class ApiPages extends Controller {
       return json_encode($PageData);
    }
 
+   // Страница трансфорс
+   public function get_transforce_page() {
+      $servicePage = Page::where('id', 28)->first();
+      $people = Meta::where('id', 5)->first();
+      $peopleArr = explode(', ', $people['data']);
+
+      $PageData = new PageData();
+      $PageData->title = $servicePage['title'];
+      $PageData->description = $servicePage['content'];
+      $PageData->people = User::whereIn('id', $peopleArr)
+                                    ->orderByRaw('FIELD(id,'.$people['data'].')')
+                                    ->get(['id', 'name', 'info', 'username', 'phone', 'position']);
+
+      return json_encode($PageData);
+   }
+
    // Страница контакты
    public function get_contacts() {
       $people = Meta::where('id', 4)->first();
