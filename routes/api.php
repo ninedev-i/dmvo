@@ -16,6 +16,7 @@ Route::get('/get_carousel', 'ApiEvents@get_carousel');
 Route::get('/get_closest_events', 'ApiEvents@get_closest_events');
 Route::get('/get_closest_exhibitions', 'ApiEvents@get_closest_exhibitions');
 Route::get('/get_news/{offset}', 'ApiEvents@get_news');
+Route::get('/get_news/{offset}/{tag}', 'ApiEvents@get_news');
 // Мероприятия
 Route::get('/get_event/{id}', 'ApiEvents@get_event');
 Route::get('/get_past_events/{year}', 'ApiEvents@get_past_events');

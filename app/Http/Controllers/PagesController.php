@@ -309,4 +309,17 @@ class PagesController extends Controller  {
          ->with('page', $page);
    }
 
+   // Контакты
+   public function corruption() {
+      $page = DB::table('pages')
+         ->where('id', '29')
+         ->first();
+
+      $adminlink = (Auth::check() && in_array(Auth::user()->id, [1, 57, 63, 90]) ? '<i class="adminpanel"><a href="'.URL::to('/').'/admin/editpage/29">Редактировать страницу</a></i>' : '');
+
+      return View::make('page')
+         ->with('adminlink', $adminlink)
+         ->with('page', $page);
+   }
+
 }

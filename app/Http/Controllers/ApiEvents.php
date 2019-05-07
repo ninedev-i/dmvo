@@ -77,10 +77,15 @@ class ApiEvents extends Controller {
    }
 
    // Список пост-релизов конкурсов и выставок
-   public function get_news($offset) {
+   public function get_news($offset, $tag = false) {
       $events = Event::where('post_reliz', '!=', '')
-         ->where('show_or_not', '0')
-         ->orderBy('date_to', 'desc')
+         ->where('show_or_not', '0');
+
+      if ($tag) {
+         $events = $events->where('tags', 'LIKE', '%'.$tag.'%');
+      }
+
+      $events = $events->orderBy('date_to', 'desc')
          ->skip($offset * 12)
          ->take(12)
          ->get(['id', 'title', 'date_from', 'date_to', 'what_time', 'post_reliz']);

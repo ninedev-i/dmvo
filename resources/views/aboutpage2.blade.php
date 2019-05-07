@@ -80,6 +80,13 @@
          </a>
       </div>
 
+      <div class="direction">
+         <a href="about/corruption">
+            <div class="dirimage" style="background-image: url(public/img/about/12.jpg); background-position: 50% 40%;"></div>
+            <h3>Противодействие коррупции</h3>
+         </a>
+      </div>
+
    </div>
 {!! $page->content !!}
 @endsection

@@ -15,6 +15,7 @@
       Route::get('/about/history', 'PagesController@history')->name('about');
       Route::get('/about/volunteer', 'PagesController@volunteer')->name('about');
       Route::get('/about/board', 'PagesController@board')->name('about');
+      Route::get('/about/corruption', 'PagesController@corruption')->name('about');
       Route::get('/about/enviroment', 'PagesController@enviroment')->name('about');
       Route::get('/about/massmedia', 'PagesController@massMedia')->name('massmedia');
       Route::get('/about/massmedia/{id}', 'PagesController@massMediaCurrent')->name('massmedia');
