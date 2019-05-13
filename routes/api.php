@@ -31,3 +31,4 @@ Route::get('/get_family', 'ApiPages@get_family_page');
 Route::get('/get_service', 'ApiPages@get_service_page');
 Route::get('/get_transforce', 'ApiPages@get_transforce_page');
 Route::get('/get_contacts', 'ApiPages@get_contacts');
+Route::get('/get_people', 'ApiPages@get_people');

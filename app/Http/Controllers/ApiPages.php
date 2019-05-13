@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Page;
 use App\Meta;
+use App\Studio;
 use App\User;
 
 class PageData {
@@ -103,5 +104,28 @@ class ApiPages extends Controller {
                      ->orderByRaw('FIELD(id,'.$people['data'].')')
                      ->get(['id', 'name', 'info', 'username', 'phone', 'position', 'email']);
       return $contacts;
+   }
+
+   // Страница коллектив
+   public function get_people() {
+      $users = User::where('show_or_not', '!=', 'false')
+                   ->orderBy('name', 'asc')
+                   ->get(['id', 'username', 'name', 'users.phone', 'position', 'email', 'reception_time', 'role']);
+
+      $studios = Studio::where('show_or_not', '=', '0')
+                       ->get(['shortname', 'studio_name', 'teacher']);
+
+      $users->map(function($user) use ($studios) {
+         $user['studios'] = collect();
+
+         foreach($studios as $studio) {
+            $teachers_array = explode(', ', $studio->teacher);
+            if (in_array($user->id, $teachers_array)) {
+               $user['studios']->push($studio);
+            }
+         }
+      });
+
+      return $users;
    }
 }
