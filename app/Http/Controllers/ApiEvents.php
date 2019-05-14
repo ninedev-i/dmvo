@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Attachment;
+use App\Studio;
 use App\Event;
+
+class Tag {
+   public $name;
+   public $url;
+}
 
 class ApiEvents extends Controller {
 
@@ -98,6 +105,42 @@ class ApiEvents extends Controller {
       $event = Event::where('id', $id)
          ->where('show_or_not', '=', '0')
          ->first();
+
+      // добавим теги
+      if ($event->tags) {
+         $in_studio_array = [];
+         $studio = Studio::pluck('shortname', 'studio_name');
+         foreach ($studio as $studioname) {
+            array_push($in_studio_array, $studioname);
+         }
+
+         $tags_array = explode(' ', $event->tags);
+         $event['tags'] = collect();
+
+         foreach ($tags_array as $this_tag) {
+            $tag = new Tag();
+            if ($this_tag == 'psychological') {
+               $tag->name = 'Психологическая служба';
+               $tag->url = '/psychological';
+            } elseif ($this_tag == 'online') {
+               $tag->name = 'Волонтерский центр';
+               $tag->url = '/volunteer';
+            } elseif ($this_tag == 'familyclub') {
+               $tag->name = 'Семейный клуб «ДМВО»';
+               $tag->url = '/family';
+            } elseif (in_array($this_tag, $in_studio_array)) {
+               $current_studio = Studio::where('shortname', $this_tag)->first();
+               $tag->name = $current_studio->studio_name;
+               $tag->url = '/studio/'.$this_tag;
+            } else {
+               continue;
+            }
+            $event['tags']->push($tag);
+         }
+      }
+
+      // добавим вложения
+      $event['attachments'] = Attachment::where('event_id', '=', $id)->get();
 
       return $event;
    }
