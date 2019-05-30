@@ -61,6 +61,16 @@ class ApiEvents extends Controller {
       return $exhibitions;
    }
 
+   // Список всех ближайших мероприятий
+   public function get_all_closest_events() {
+      $closestEvents = Event::where('date_to', '>=', date('Y-m-d'))
+         ->where('show_or_not', '0')
+         ->orderBy('date_from', 'asc')
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time', 'tags']);
+
+      return $closestEvents;
+   }
+
    // Список прошедших мероприятий по годам
    public function get_past_events($year) {
       $events = [];

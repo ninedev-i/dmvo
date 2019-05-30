@@ -14,6 +14,7 @@ Route::get('/ping', 'ApiEvents@ping');
 Route::get('/get_index', 'ApiEvents@get_index');
 Route::get('/get_carousel', 'ApiEvents@get_carousel');
 Route::get('/get_closest_events', 'ApiEvents@get_closest_events');
+Route::get('/get_all_closest_events', 'ApiEvents@get_all_closest_events');
 Route::get('/get_closest_exhibitions', 'ApiEvents@get_closest_exhibitions');
 Route::get('/get_news/{offset}', 'ApiEvents@get_news');
 Route::get('/get_news/{offset}/{tag}', 'ApiEvents@get_news');
