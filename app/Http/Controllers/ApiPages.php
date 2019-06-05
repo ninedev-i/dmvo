@@ -88,6 +88,7 @@ class ApiPages extends Controller {
       $PageData = new PageData();
       $PageData->title = $servicePage['title'];
       $PageData->description = $servicePage['content'];
+      $PageData->additional = Meta::where('id', 6)->get(['data'])->first()['data'];
       $PageData->people = User::whereIn('id', $peopleArr)
                                     ->orderByRaw('FIELD(id,'.$people['data'].')')
                                     ->get(['id', 'name', 'info', 'username', 'phone', 'position']);
