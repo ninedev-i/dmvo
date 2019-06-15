@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Attachment;
 use App\Studio;
@@ -12,7 +13,7 @@ class Tag {
    public $url;
 }
 
-class ApiEvents extends Controller {
+class Events extends Controller {
 
    public function ping() {
       return 'Попингуй мне тут';
@@ -20,10 +21,10 @@ class ApiEvents extends Controller {
 
    // Список ближайших мероприятий
    public function get_index() {
-      $output['carousel'] = ApiEvents::get_carousel();
-      $output['events'] = ApiEvents::get_closest_events(5);
-      $output['exhibitions'] = ApiEvents::get_closest_exhibitions();
-      $output['news'] = ApiEvents::get_news(0);
+      $output['carousel'] = Events::get_carousel();
+      $output['events'] = Events::get_closest_events(5);
+      $output['exhibitions'] = Events::get_closest_exhibitions();
+      $output['news'] = Events::get_news(0);
 
       return $output;
    }

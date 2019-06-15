@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Studio;
@@ -12,15 +13,15 @@ class Direction {
    public $studios;
 }
 
-class ApiStudio extends Controller {
+class Studios extends Controller {
 
    // Направления со студиями
    public function get_studios_by_directions() {
-      $directions_array = ApiStudio::get_all_directions();
+      $directions_array = Studios::get_all_directions();
 
       $collection = collect();
       foreach($directions_array as $item) {
-         $studio_list = ApiStudio::get_studio_list($item);
+         $studio_list = Studios::get_studio_list($item);
          $direction = new Direction();
          $direction->name = $item;
          $direction->studios = $studio_list;

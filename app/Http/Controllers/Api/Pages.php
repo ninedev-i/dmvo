@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Page;
 use App\Meta;
@@ -14,7 +15,7 @@ class PageData {
    public $people = [];
 }
 
-class ApiPages extends Controller {
+class Pages extends Controller {
    // Страница мероприятия
    public function get_page($id) {
       return Page::where('id', $id)->first();
