@@ -44,9 +44,8 @@ class Volunteer extends Controller {
       ];
       Mail::send('emails/sendmail', $data, function ($message) {
          $message->from('mail@xn--d1aadekogaqcb.xn--p1ai', 'Дом молодежи');
-         $message->to('evshin.1994@inbox.r')->subject('Сообщение с сайта – Волонтеркий центр');
+         $message->to('levshin.1994@inbox.ru')->subject('Сообщение с сайта – Волонтеркий центр');
          $message->bcc('master-vva@narod.ru', 'Копия письма с ДМВО');
-         // $message->to('master-vva@narod.ru')->subject('Сообщение с сайта – психологическая служба!');
       });
    }
 

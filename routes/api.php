@@ -35,3 +35,5 @@ Route::get('/get_contacts', 'Api\Pages@get_contacts');
 Route::get('/get_people', 'Api\Pages@get_people');
 // Отправка форм
 Route::post('/mail_psy', 'Api\Mails@mail_psy');
+Route::post('/mail_transforce', 'Api\Mails@mail_transforce');
+Route::post('/mail_volunteer', 'Api\Mails@mail_volunteer');
