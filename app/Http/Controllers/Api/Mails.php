@@ -35,7 +35,7 @@ class Mails extends Controller {
          'email' => $request['email'],
          'phone' => $request['phone'],
          'fio' => $request['fio'],
-         'message' => $request['message'],
+         'textmessage' => $request['message'],
          'show' => $request['show']
       ];
       Mail::send('emails/ordertransforce', $data, function($message) {
@@ -53,8 +53,9 @@ class Mails extends Controller {
          'name' => $request['name'],
          'email' => $request['email'],
          'phone' => $request['phone'],
-         'message' => $request['message']
+         'textmessage' => $request['message']
       ];
+
       Mail::send('emails/ordervolunteer', $data, function($message) {
          $message->from('mail@xn--d1aadekogaqcb.xn--p1ai', 'Дом молодежи');
          $message->to('levshin.1994@inbox.ru')->subject('Сообщение с сайта – Письмо в волонтерский центр');
