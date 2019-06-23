@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Studio;
 use App\User;
+use App\Meta;
 
 class Direction {
    public $name;
@@ -17,8 +18,13 @@ class Studios extends Controller {
 
    // Направления со студиями
    public function get_studios_by_directions() {
+      $output = collect();
       $directions_array = Studios::get_all_directions();
-
+      $people = Meta::where('id', 7)->first();
+      $peopleArr = explode(', ', $people['data']);
+      $specialist = User::whereIn('id', $peopleArr)
+                        ->orderByRaw('FIELD(id,'.$people['data'].')')
+                        ->get(['id', 'name', 'info', 'username', 'email', 'phone', 'position']);
       $collection = collect();
       foreach($directions_array as $item) {
          $studio_list = Studios::get_studio_list($item);
@@ -29,7 +35,10 @@ class Studios extends Controller {
          $collection->push($direction);
       };
 
-      return $collection;
+      $output['directions'] = $collection;
+      $output['specialists'] = $specialist;
+
+      return $output;
    }
 
    // Список всех направлений
@@ -55,7 +64,7 @@ class Studios extends Controller {
       return $list;
    }
 
-   // Страница мероприятия
+   // Страница студии
    public function get_studio($shortname) {
       $studio = Studio::where('shortname', $shortname)
          ->where('show_or_not', '=', '0')
