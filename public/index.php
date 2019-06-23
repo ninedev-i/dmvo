@@ -1,6 +1,8 @@
 <?php
-header('Content-type: text/html');
+header('Content-type: application/x-www-form-urlencoded');
 header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, X-Requested-With");
 
 /**
  * Laravel - A PHP Framework For Web Artisans

@@ -2,6 +2,12 @@
 
 use Illuminate\Http\Request;
 
+Route::post('login', 'Api\Authorization@login');
+Route::post('register', 'Api\Authorization@register');
+Route::group(['middleware' => 'auth:api'], function(){
+   Route::post('details', 'Api\Authorization@details');
+});
+
 Route::get('/user', function (Request $request) { return $request->user(); })->middleware('auth:api');
 Route::get('/get_last_articles/{current_cat}/{current_id}', 'JournalArticles@get_last_articles');
 

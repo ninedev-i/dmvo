@@ -1,18 +1,22 @@
 <?php
 
 namespace App;
-
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable {
-   use Notifiable;
+   use HasApiTokens, Notifiable;
 
-   protected $fillable = [ 'username', 'bio', 'name', 'role', 'info', 'email', 'password', 'show_or_not',];
+   protected $fillable = [ 'email', 'password' ];
 
    protected $hidden = [ 'password', 'remember_token', ];
 
    public function studio() {
       return $this->hasMany('App\Studio', 'teacher', 'id');
+   }
+
+   public function setPasswordAttribute($password) {
+      $this->attributes['password'] = bcrypt($password);
    }
 }
