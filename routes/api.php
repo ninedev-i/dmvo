@@ -40,6 +40,7 @@ Route::get('/get_service', 'Api\Pages@get_service_page');
 Route::get('/get_transforce', 'Api\Pages@get_transforce_page');
 Route::get('/get_contacts', 'Api\Pages@get_contacts');
 Route::get('/get_people', 'Api\Pages@get_people');
+Route::get('/get_board_posts', 'Api\Pages@get_board_posts');
 // Отправка форм
 Route::post('/mail_psy', 'Api\Mails@mail_psy');
 Route::post('/mail_transforce', 'Api\Mails@mail_transforce');

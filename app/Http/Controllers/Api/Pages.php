@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Page;
+use App\Post;
 use App\Meta;
 use App\Studio;
 use App\User;
@@ -129,5 +130,11 @@ class Pages extends Controller {
       });
 
       return $users;
+   }
+   // Страница информационный стенд
+   public function get_board_posts() {
+      return Post::where('tags', '=', 'board')
+                   ->orderBy('date', 'desc')
+                   ->get();
    }
 }
