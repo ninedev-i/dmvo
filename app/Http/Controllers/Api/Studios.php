@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Studio;
+use App\Event;
 use App\User;
 use App\Meta;
 
@@ -77,6 +78,12 @@ class Studios extends Controller {
                             ->get(['id', 'name', 'username', 'phone']);
 
       $studio['images'] = Storage::disk('images')->files('/studio/'.$shortname);
+
+      $studio['events'] = Event::where('tags', 'LIKE', '%'.$shortname.'%')
+         ->where('show_or_not', '0')
+         ->orderBy('date_from', 'desc')
+         ->take(12)
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time']);
 
       return $studio;
    }

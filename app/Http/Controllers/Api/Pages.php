@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Page;
 use App\Post;
+use App\Event;
 use App\Meta;
 use App\Studio;
 use App\User;
@@ -14,6 +15,7 @@ class PageData {
    public $title;
    public $description;
    public $people = [];
+   public $events = [];
 }
 
 class Pages extends Controller {
@@ -34,6 +36,14 @@ class Pages extends Controller {
       $PageData->people = User::whereIn('id', $peopleArr)
                               ->orderByRaw('FIELD(id,'.$people['data'].')')
                               ->get(['id', 'name', 'info', 'username', 'phone', 'position', 'reception_time']);
+
+
+
+      $PageData->events = Event::where('tags', 'LIKE', '%psychological%')
+         ->where('show_or_not', '0')
+         ->orderBy('date_from', 'desc')
+         ->take(12)
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time']);
 
       return json_encode($PageData);
    }
