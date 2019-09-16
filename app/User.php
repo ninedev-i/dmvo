@@ -10,7 +10,7 @@ class User extends Authenticatable {
 
    protected $fillable = [ 'email', 'password' ];
 
-   protected $hidden = [ 'password', 'remember_token', ];
+   protected $hidden = [ 'password', /*'remember_token',*/ ];
 
    public function studio() {
       return $this->hasMany('App\Studio', 'teacher', 'id');

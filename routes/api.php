@@ -7,6 +7,7 @@ Route::post('register', 'Api\Authorization@register');
 Route::group(['middleware' => 'auth:api'], function(){
    Route::post('details', 'Api\Authorization@details');
 });
+Route::get('/is_authorized', 'Api\Authorization@is_authorized');
 Route::get('/get_user_info/{id}', 'Api\Users@get_user_info');
 
 Route::get('/user', function (Request $request) { return $request->user(); })->middleware('auth:api');

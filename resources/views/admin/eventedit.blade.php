@@ -34,6 +34,7 @@
              <option value='psychological' <?php if (in_array('psychological', $alltags)) {echo "selected";} ?>>Психологическая служба</option>
              <option value='online' <?php if (in_array('online', $alltags)) {echo "selected";} ?>>Волонтерский центр</option>
              <option value='familyclub' <?php if (in_array('familyclub', $alltags)) {echo "selected";} ?>>Семейный клуб</option>
+             <option value='transforce' <?php if (in_array('transforce', $alltags)) {echo "selected";} ?>>Транс-Форс</option>
              <option value='exhibition' <?php if (in_array('exhibition', $alltags)) {echo "selected";} ?>>Выставка, конкурс</option>
              <?php foreach ($studiolist as $studio): ?>
              <option value='<?php echo $studio->shortname ?>' <?php if (in_array($studio->shortname, $alltags)) {echo "selected";} ?>><?php echo $studio->studio_name; ?></option>

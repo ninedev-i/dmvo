@@ -136,9 +136,12 @@ class Events extends Controller {
             } elseif ($this_tag == 'online') {
                $tag->name = 'Волонтерский центр';
                $tag->url = '/volunteer';
+            } elseif ($this_tag == 'transforce') {
+               $tag->name = 'Транс-Форс';
+               $tag->url = '/volunteer';
             } elseif ($this_tag == 'familyclub') {
                $tag->name = 'Семейный клуб «ДМВО»';
-               $tag->url = '/family';
+               $tag->url = '/service/transeforce';
             } elseif (in_array($this_tag, $in_studio_array)) {
                $current_studio = Studio::where('shortname', $this_tag)->first();
                $tag->name = $current_studio->studio_name;

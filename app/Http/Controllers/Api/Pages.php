@@ -37,8 +37,6 @@ class Pages extends Controller {
                               ->orderByRaw('FIELD(id,'.$people['data'].')')
                               ->get(['id', 'name', 'info', 'username', 'phone', 'position', 'reception_time']);
 
-
-
       $PageData->events = Event::where('tags', 'LIKE', '%psychological%')
          ->where('show_or_not', '0')
          ->orderBy('date_from', 'desc')
@@ -61,6 +59,12 @@ class Pages extends Controller {
                               ->orderByRaw('FIELD(id,'.$people['data'].')')
                               ->get(['id', 'name', 'info', 'username', 'phone', 'position']);
 
+      $PageData->events = Event::where('tags', 'LIKE', '%online%')
+         ->where('show_or_not', '0')
+         ->orderBy('date_from', 'desc')
+         ->take(12)
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time']);
+
       return json_encode($PageData);
    }
 
@@ -76,6 +80,12 @@ class Pages extends Controller {
       $PageData->people = User::whereIn('id', $peopleArr)
                               ->orderByRaw('FIELD(id,'.$people['data'].')')
                               ->get(['id', 'name', 'info', 'username', 'phone', 'position']);
+
+      $PageData->events = Event::where('tags', 'LIKE', '%family%')
+         ->where('show_or_not', '0')
+         ->orderBy('date_from', 'desc')
+         ->take(12)
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time']);
 
       return json_encode($PageData);
    }
@@ -104,6 +114,12 @@ class Pages extends Controller {
       $PageData->people = User::whereIn('id', $peopleArr)
                                     ->orderByRaw('FIELD(id,'.$people['data'].')')
                                     ->get(['id', 'name', 'info', 'username', 'phone', 'position']);
+
+      $PageData->events = Event::where('tags', 'LIKE', '%transforce%')
+         ->where('show_or_not', '0')
+         ->orderBy('date_from', 'desc')
+         ->take(12)
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time']);
 
       return json_encode($PageData);
    }

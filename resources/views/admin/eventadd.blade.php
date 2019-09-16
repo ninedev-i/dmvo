@@ -24,6 +24,7 @@
          <option value='online'>Волонтерский центр</option>
          <option value='psychological'>Психологическая служба</option>
          <option value='familyclub'>Семейный клуб</option>
+         <option value='transforce'>Транс-Форс</option>
          <option value='exhibition'>Выставка, конкурс</option>
          <?php foreach ($studiolist as $studio): ?>
             <option value='<?php echo $studio->shortname ?>'><?php echo $studio->studio_name; ?></option>

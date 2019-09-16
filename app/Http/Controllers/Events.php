@@ -140,6 +140,7 @@ class Events extends Controller {
             if ($this_tag == 'psychological') {array_push($tags, "<li class='studios_news'><a href='".URL::to('/')."/psychological' class='smallbutton'>Психологическая служба</a></li>");}
             elseif ($this_tag == 'online') {array_push($tags, "<li class='studios_news'><a href='".URL::to('/')."/volunteer' class='smallbutton'>Волонтерский центр</a></li>");}
             elseif ($this_tag == 'familyclub') {array_push($tags, "<li class='studios_news'><a href='".URL::to('/')."/family' class='smallbutton'>Семейный клуб «ДМВО»</a></li>");}
+            elseif ($this_tag == 'transforce') {array_push($tags, "<li class='studios_news'><a href='".URL::to('/')."/service/transeforce' class='smallbutton'>Познавательный комплекс «Транс-Форс»</a></li>");}
             elseif ($this_tag == 'news' || $this_tag == 'exhibition') {}
             elseif (in_array($this_tag, $in_studio_array)) {
                $current_studio = Studio::where('shortname', $this_tag)->first();
