@@ -19,6 +19,7 @@ class VerifyCsrfToken extends BaseVerifier
         '/psychological/group',
         '/psychological/proforientation',
         '/psychological/training',
-        '/admin/add_attachement'
+        '/admin/add_attachement',
+        '/oauth/*'
     ];
 }

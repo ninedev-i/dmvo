@@ -4,9 +4,9 @@ use Illuminate\Http\Request;
 
 Route::post('login', 'Api\Authorization@login');
 Route::post('register', 'Api\Authorization@register');
-Route::group(['middleware' => 'auth:api'], function(){
+//Route::group(['middleware' => 'auth:api'], function(){
    Route::post('details', 'Api\Authorization@details');
-});
+//});
 Route::get('/is_authorized', 'Api\Authorization@is_authorized');
 Route::get('/get_user_info/{id}', 'Api\Users@get_user_info');
 

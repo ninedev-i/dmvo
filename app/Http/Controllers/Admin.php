@@ -60,7 +60,6 @@ class Admin extends Controller {
       $content = Studio::where('shortname', $shortname)
          ->first();
       $peoplelist = User::where('show_or_not', '=', 'true')
-         ->where('role', 'like', '%teacher%')
          ->orderBy('name', 'asc')
          ->get();
       $photos = Storage::disk('images')->allFiles('/studio/'.$shortname);

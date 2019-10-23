@@ -26,7 +26,7 @@
       <a href='about/people/85' class='psy'><img src='{{URL::to('/')}}/public/img/users/np.aksenova.jpg' style='height: 110px; float: left; margin: 0px 5px;'><b>Аксёнова Наталья Павловна</b><br />заведующая отделом</p></a>
       <a href='about/people/23' class='psy'><img src='{{URL::to('/')}}/public/img/users/du.kudriavcev.jpg' style='height: 110px; float: left; margin: 0px 5px;'><p><b>Кудрявцев Денис Юрьевич</b><br />психолог</p></a>
       <a href='about/people/30' class='psy'><img src='{{URL::to('/')}}/public/img/users/nf.novoselova.jpg' style='height: 110px; float: left; margin: 0px 5px;'><p><b>Новосёлова Наталья Фёдоровна</b><br />психолог</p></a>
-      <a href='about/people/92' class='psy'><img src='{{URL::to('/')}}/public/img/users/ma.cheidze.jpg' style='height: 110px; float: left; margin: 0px 5px;'><p><b>Чхеидзе Мариам Автандиловна</b><br />психолог</p></a>
+      <a href='about/people/43' class='psy'><img src='{{URL::to('/')}}/public/img/users/av.ustavshikova.jpg' style='height: 110px; float: left; margin: 0px 5px;'><p><b>Уставщикова Ангелина Витальевна</b><br />психолог</p></a>
    </div>
    <h2 style='margin-bottom: 15px; margin-top: 10px;'>Направления работы</h2>
    <div style='display: -webkit-flex; display: flex; -webkit-justify-content: space-between; justify-content: space-between; -webkit-align-items: top; align-items: top;'>
