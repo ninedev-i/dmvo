@@ -41,7 +41,7 @@ class Pages extends Controller {
          ->where('show_or_not', '0')
          ->orderBy('date_from', 'desc')
          ->take(12)
-         ->get(['id', 'title', 'date_from', 'date_to', 'what_time']);
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time', 'post_reliz', 'content']);
 
       return json_encode($PageData);
    }
@@ -63,7 +63,7 @@ class Pages extends Controller {
          ->where('show_or_not', '0')
          ->orderBy('date_from', 'desc')
          ->take(12)
-         ->get(['id', 'title', 'date_from', 'date_to', 'what_time']);
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time', 'post_reliz', 'content']);
 
       return json_encode($PageData);
    }
@@ -85,7 +85,7 @@ class Pages extends Controller {
          ->where('show_or_not', '0')
          ->orderBy('date_from', 'desc')
          ->take(12)
-         ->get(['id', 'title', 'date_from', 'date_to', 'what_time']);
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time', 'post_reliz', 'content']);
 
       return json_encode($PageData);
    }
@@ -119,7 +119,7 @@ class Pages extends Controller {
          ->where('show_or_not', '0')
          ->orderBy('date_from', 'desc')
          ->take(12)
-         ->get(['id', 'title', 'date_from', 'date_to', 'what_time']);
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time', 'post_reliz', 'content']);
 
       return json_encode($PageData);
    }

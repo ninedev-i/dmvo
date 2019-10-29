@@ -138,10 +138,10 @@ class Events extends Controller {
                $tag->url = '/volunteer';
             } elseif ($this_tag == 'transforce') {
                $tag->name = 'Транс-Форс';
-               $tag->url = '/volunteer';
+               $tag->url = '/transforce';
             } elseif ($this_tag == 'familyclub') {
                $tag->name = 'Семейный клуб «ДМВО»';
-               $tag->url = '/service/transeforce';
+               $tag->url = '/family';
             } elseif (in_array($this_tag, $in_studio_array)) {
                $current_studio = Studio::where('shortname', $this_tag)->first();
                $tag->name = $current_studio->studio_name;
