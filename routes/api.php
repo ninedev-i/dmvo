@@ -45,7 +45,7 @@ Route::get('/get_board_posts', 'Api\Pages@get_board_posts');
 Route::post('/mail_psy', 'Api\Mails@mail_psy');
 Route::post('/mail_transforce', 'Api\Mails@mail_transforce');
 Route::post('/mail_volunteer', 'Api\Mails@mail_volunteer');
-
+// Авторизация и админка
 Route::get('failAuth', 'Api\Admin@failAuth');
 Route::group(['middleware' => 'isadmin'], function() {
    Route::post('auth', 'Api\Admin@auth');

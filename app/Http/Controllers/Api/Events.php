@@ -14,11 +14,6 @@ class Tag {
 }
 
 class Events extends Controller {
-
-   public function ping() {
-      return 'Попингуй мне тут';
-   }
-
    // Список ближайших мероприятий
    public function get_index() {
       $output['carousel'] = Events::get_carousel();
@@ -62,14 +57,22 @@ class Events extends Controller {
       return $exhibitions;
    }
 
-   // Список всех ближайших мероприятий
+   // Список ближайших мероприятий для страницы Мероприятия
    public function get_all_closest_events() {
-      $closestEvents = Event::where('date_to', '>=', date('Y-m-d'))
+      $output['closestEvents'] = Event::where('date_to', '>=', date('Y-m-d'))
          ->where('show_or_not', '0')
+         ->where('tags', 'NOT LIKE', '%exhibition%')
          ->orderBy('date_from', 'asc')
-         ->get(['id', 'title', 'date_from', 'date_to', 'what_time', 'tags']);
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time']);
 
-      return $closestEvents;
+      $output['exhibitions'] = Event::where('show_or_not', '=', '0')
+         ->where('date_to', '>=', date('Y-m-d'))
+         ->where('tags', 'LIKE', '%exhibition%')
+         ->orderBy('date_from', 'asc')
+         ->take(4)
+         ->get(['id', 'title', 'date_from', 'date_to', 'what_time']);
+
+      return $output;
    }
 
    // Список прошедших мероприятий по годам
