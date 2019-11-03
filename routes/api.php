@@ -18,7 +18,6 @@ Route::post('/send_request_to_studio', 'Studios@sendRequestToStudio');
 Route::put('/finish_request_to_studio', 'Studios@finishRequestToStudio');
 
 // Новое апи
-Route::get('/ping', 'Api\Events@ping');
 Route::get('/get_index', 'Api\Events@get_index');
 Route::get('/get_carousel', 'Api\Events@get_carousel');
 Route::get('/get_closest_events', 'Api\Events@get_closest_events');
@@ -46,3 +45,7 @@ Route::get('/get_board_posts', 'Api\Pages@get_board_posts');
 Route::post('/mail_psy', 'Api\Mails@mail_psy');
 Route::post('/mail_transforce', 'Api\Mails@mail_transforce');
 Route::post('/mail_volunteer', 'Api\Mails@mail_volunteer');
+
+Route::group(['middleware' => 'isadmin'], function() {
+   Route::post('ping', 'Api\Admin\Events@ping');
+});
