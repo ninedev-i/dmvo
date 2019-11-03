@@ -127,7 +127,7 @@ class Pages extends Controller {
    // Страница контакты
    public function get_contacts() {
       $people = Meta::where('id', 4)->first();
-      $peopleArr = explode(', ', $people['data']);
+      $peopleArr = preg_split('/[\s,]+/', $people['data']);
 
       $contacts = User::whereIn('id', $peopleArr)
                      ->orderByRaw('FIELD(id,'.$people['data'].')')

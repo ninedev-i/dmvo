@@ -46,6 +46,8 @@ Route::post('/mail_psy', 'Api\Mails@mail_psy');
 Route::post('/mail_transforce', 'Api\Mails@mail_transforce');
 Route::post('/mail_volunteer', 'Api\Mails@mail_volunteer');
 
+Route::get('failAuth', 'Api\Admin@failAuth');
 Route::group(['middleware' => 'isadmin'], function() {
-   Route::post('ping', 'Api\Admin\Events@ping');
+   Route::post('auth', 'Api\Admin@auth');
+   Route::post('admin/edit_contacts', 'Api\Admin@edit_contacts');
 });
