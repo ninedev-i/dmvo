@@ -159,8 +159,7 @@ class Pages extends Controller {
    }
    // Страница информационный стенд
    public function get_board_posts() {
-      return Post::where('tags', '=', 'board')
-                   ->orderBy('date', 'desc')
-                   ->get();
+      return Post::orderBy('date', 'desc')
+                ->get();
    }
 }
