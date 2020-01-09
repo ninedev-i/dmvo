@@ -157,7 +157,8 @@ class Events extends Controller {
       }
 
       // добавим вложения
-      $event['attachments'] = Attachment::where('event_id', '=', $id)->get();
+      $event['attachments'] = Attachment::where('event_id', '=', $id)
+         ->get(['id', 'event_id', 'exists', 'is_button', 'path', 'title', 'type']);
 
       return $event;
    }

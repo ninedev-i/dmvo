@@ -33,6 +33,7 @@ class Pages extends Controller {
       $PageData = new PageData();
       $PageData->title = $psyPage['title'];
       $PageData->description = $psyPage['content'];
+      $PageData->additional = Meta::where('id', 8)->get(['data'])->first()['data'];
       $PageData->people = User::whereIn('id', $peopleArr)
                               ->orderByRaw('FIELD(id,'.$people['data'].')')
                               ->get(['id', 'name', 'info', 'username', 'phone', 'position', 'reception_time']);
